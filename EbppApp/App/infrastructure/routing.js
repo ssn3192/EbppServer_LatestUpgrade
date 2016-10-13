@@ -4,32 +4,32 @@ app.config(function ($routeProvider) {
 
     $routeProvider
         .when('/admin', {
-            templateUrl: 'app/partials/admin.html',
+            templateUrl: 'App/partials/admin.html',
             controller: 'adminController',
             controllerAs: 'vm'
         })
         .when('/bank', {
-            templateUrl: 'app/partials/bank.html',
+            templateUrl: 'App/partials/bank.html',
             controller: 'bankController',
             controllerAs: 'vm'
         })
         .when('/bankOnFile', {
-            templateUrl: 'app/partials/bankOnFile.html',
+            templateUrl: 'App/partials/bankOnFile.html',
             controller: 'bankOnFileController',
             controllerAs: 'vm'
         })
         .when('/card', {
-            templateUrl: 'app/partials/card.html',
+            templateUrl: 'App/partials/card.html',
             controller: 'cardController',
             controllerAs: 'vm'
         })
         .when('/cardOnFile', {
-            templateUrl: 'app/partials/cardOnFile.html',
+            templateUrl: 'App/partials/cardOnFile.html',
             controller: 'cardOnFileController',
             controllerAs: 'vm'
         })
         .when('/customer', {
-            templateUrl: 'app/partials/customer.html',
+            templateUrl: 'App/partials/customer.html',
             controller: 'customerController',
             controllerAs: 'vm',
             resolve: {
@@ -40,22 +40,22 @@ app.config(function ($routeProvider) {
             }
         })
         .when('/customerAchResult/:confirmationNumber', {
-            templateUrl: 'app/partials/customerAchResult.html',
+            templateUrl: 'App/partials/customerAchResult.html',
             controller: 'customerAchResultController',
             controllerAs: 'vm'
         })
         .when('/customerChargeResult/:authorizationCode', {
-            templateUrl: 'app/partials/customerChargeResult.html',
+            templateUrl: 'App/partials/customerChargeResult.html',
             controller: 'customerChargeResultController',
             controllerAs: 'vm'
         })
         .when('/customerPayment', {
-            templateUrl: 'app/partials/customerPayment.html',
+            templateUrl: 'App/partials/customerPayment.html',
             controller: 'customerPaymentController',
             controllerAs: 'vm'
         })
         .when('/customerPaymentDetail/:transactionId?', {
-            templateUrl: 'app/partials/customerPaymentDetail.html',
+            templateUrl: 'App/partials/customerPaymentDetail.html',
             controller: 'customerPaymentDetailController',
             controllerAs: 'vm',
             resolve: {
@@ -76,37 +76,37 @@ app.config(function ($routeProvider) {
             }
         })
         .when('/guest/:accountNumber/:merchantGuid?', {
-            templateUrl: 'app/partials/guest.html',
+            templateUrl: 'App/partials/guest.html',
             controller: 'guestController',
             controllerAs: 'vm'
         })
         .when('/guestAccount', {
-            templateUrl: 'app/partials/guestAccount.html',
+            templateUrl: 'App/partials/guestAccount.html',
             controller: 'guestAccountController',
             controllerAs: 'vm'
         })
         .when('/guestAchResult/:confirmationNumber', {
-            templateUrl: 'app/partials/guestAchResult.html',
+            templateUrl: 'App/partials/guestAchResult.html',
             controller: 'guestAchResultController',
             controllerAs: 'vm'
         })
         .when('/guestChargeResult/:authorizationCode', {
-            templateUrl: 'app/partials/guestChargeResult.html',
+            templateUrl: 'App/partials/guestChargeResult.html',
             controller: 'guestChargeResultController',
             controllerAs: 'vm'
         })
         .when('/history/:merchantGuid?/:customerGuid?', {
-            templateUrl: 'app/partials/history.html',
+            templateUrl: 'App/partials/history.html',
             controller: 'historyController',
             controllerAs: 'vm'
         })
         .when('/insufficient', {
-            templateUrl: 'app/partials/insufficient.html',
+            templateUrl: 'App/partials/insufficient.html',
             controller: 'insufficientController',
             controllerAs: 'vm'
         })
         .when('/invoice', {
-            templateUrl: 'app/partials/invoice.html',
+            templateUrl: 'App/partials/invoice.html',
             controller: 'invoiceController',
             controllerAs: 'vm',
             resolve: {
@@ -125,27 +125,27 @@ app.config(function ($routeProvider) {
             }
         })
         .when('/merchantImport', {
-            templateUrl: 'app/partials/merchantImport.html',
+            templateUrl: 'App/partials/merchantImport.html',
             controller: 'merchantImportController',
             controllerAs: 'vm'
         })
         .when('/login', {
-            templateUrl: 'app/partials/login.html',
-            controller: 'loginController',
+            templateUrl: 'App/templates/login.html',
+            controller: 'LoginController',
             controllerAs: 'vm'
         })
         .when('/logout', {
-            templateUrl: 'app/partials/signout.html',
+            templateUrl: 'App/partials/signout.html',
             controller: 'signoutController',
             controllerAs: 'vm'
         })
         .when('/payment', {
-            templateUrl: 'app/partials/payment.html',
+            templateUrl: 'App/partials/payment.html',
             controller: 'paymentController',
             controllerAs: 'vm'
         })
         .when('/paymentDetail/:transactionId?', {
-            templateUrl: 'app/partials/paymentDetail.html',
+            templateUrl: 'App/partials/paymentDetail.html',
             controller: 'paymentDetailController',
             controllerAs: 'vm',
             resolve: {
@@ -162,27 +162,27 @@ app.config(function ($routeProvider) {
             }
         })
         .when('/preRegister', {
-            templateUrl: 'app/partials/preRegister.html',
+            templateUrl: 'App/partials/preRegister.html',
             controller: 'preRegisterController',
             controllerAs: 'vm'
         })
         .when('/signout', {
-            templateUrl: 'app/partials/signout.html',
+            templateUrl: 'App/partials/signout.html',
             controller: 'signoutController',
             controllerAs: 'vm'
         })
         .when('/register', {
-            templateUrl: 'app/partials/register.html',
+            templateUrl: 'App/partials/register.html',
             controller: 'registerController',
             controllerAs: 'vm'
         })
         .when('/token/:merchantGuid/:merchantApiKey', {
-            templateUrl: 'app/partials/token.html',
+            templateUrl: 'App/partials/token.html',
             controller: 'tokenController',
             controllerAs: 'vm'
         })
         .when('/transactionHistory/:merchantGuid?/:customerGuid?', {
-            templateUrl: 'app/partials/transactionHistory.html',
+            templateUrl: 'App/partials/transactionHistory.html',
             controller: 'transactionHistoryController',
             controllerAs: 'vm'
         })

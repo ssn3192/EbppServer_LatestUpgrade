@@ -135,12 +135,16 @@
     <Content Include="App\infrastructure\routing.js" />
     <Content Include="App\infrastructure\runner.js" />
     <Content Include="App\providers\LocalStorageProvider.js" />
+    <Content Include="App\services\comman\comman.js" />
+    <Content Include="App\services\comman\exceptionHandlerFactory.js" />
+    <Content Include="App\services\comman\logger.js" />
     <Content Include="App\services\LoginFactory.js" />
     <Content Include="App\templates\login.html" />
     <Content Include="Global.asax" />
     <Content Include="index.html" />
     <Content Include="scripts\ai.0.22.19-build00125.js" />
     <Content Include="scripts\ai.0.22.19-build00125.min.js" />
+    <Content Include="scripts\spin.js" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>

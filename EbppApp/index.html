@@ -19,14 +19,14 @@
     <!-- Optional theme -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
     <!-- Latest compiled and minified JavaScript -->
-
+    <link href="App/css/style.css" rel="stylesheet" />
     <link href="node_modules/angular-ui-grid/ui-grid.css" rel="stylesheet" />
-    <link href="app/css/style.css" rel="stylesheet" />
+   
     <link href="bower_components/AngularJS-Toaster/toaster.css" rel="stylesheet" />
     <link href="bower_components/angular-ui-select/dist/select.css" rel="stylesheet" />
     <!-- APPLICATION DEPENDENCIES -->
     <!--<script src="bower_components/angular/angular.js"></script>-->
-    <script src="bower_components/bower-angularjs/angular.js"></script>
+    <script src="bower_components/angular/angular.js"></script>
     <script src="bower_components/angular-animate/angular-animate.js"></script>
     <script src="bower_components/angular-local-storage/dist/angular-local-storage.js"></script>
     <script src="scripts/spin.js"></script>
@@ -40,12 +40,12 @@
     <script src="bower_components/moment/moment.js"></script>
     <script src="bower_components/angular-moment/angular-moment.js"></script>
 
-    <script src="bower_components/bower_components/angular-credit-cards/release/angular-credit-cards.js"></script>
-    <script src="bower_components/bower_components/pdfmake/build/pdfmake.js"></script>
+    <script src="bower_components/angular-credit-cards/release/angular-credit-cards.js"></script>
+    <script src="bower_components/pdfmake/build/pdfmake.js"></script>
 
-    <script src="bower_components/bower_components/pdfmake/build/vfs_fonts.js"></script>
+    <script src="bower_components/pdfmake/build/vfs_fonts.js"></script>
     <script src="bower_components/angular-messages/angular-messages.js"></script>
-    <script src="bower_components/bower_components/jquery/dist/jquery.js"></script>
+    <script src="bower_components/jquery/dist/jquery.js"></script>
     <script src="bower_components/angular-ui-select/dist/select.js"></script>
 
 
@@ -56,81 +56,32 @@
 
     <!-- APPLICATION SCRIPTS -->
     <!--INFRASTRUCTURE-->
-    <script src="app/infrastructure/app.js"></script>
-    <script src="app/services/common/common.js"></script>
-    <script src="app/services/common/logger.js"></script>
-    <script src="app/infrastructure/routing.js"></script>
-    <script src="app/infrastructure/config.js"></script>
-    <script src="app/infrastructure/runner.js"></script>
 
-
+    <script src="App/infrastructure/app.js"></script>
+    <script src="App/services/comman/comman.js"></script>
+    <script src="App/services/comman/logger.js"></script>
+    <script src="App/infrastructure/config.js"></script>
+    <script src="App/infrastructure/routing.js"></script>
+    <script src="App/infrastructure/runner.js"></script>
     <!--SERVICES-->
     <!--<script src="app/services/authService.js"></script>-->
     <!--FACTORIES-->
-    <script src="app/services/globalFactory.js"></script>
-    <script src="app/services/loginFactory.js"></script>
-    <script src="app/services/secureNetTokenFactory.js"></script>
-    <script src="app/services/secureNetCustomerFactory.js"></script>
-    <script src="app/services/secureNetChargeFactory.js"></script>
-    <script src="app/services/cardFactory.js"></script>
-    <script src="app/services/cardOnFileFactory.js"></script>
-    <script src="app/services/customerFactory.js"></script>
-    <script src="app/services/guestFactory.js"></script>
-    <script src="app/services/merchantFactory.js"></script>
-    <script src="app/services/registerFactory.js"></script>
-    <script src="app/services/transactionHistoryFactory.js"></script>
-    <script src="app/services/achHistoryFactory.js"></script>
-    <script src="app/services/bankFactory.js"></script>
-    <script src="app/services/bankOnFileFactory.js"></script>
-    <script src="app/services/achFactory.js"></script>
-    <script src="app/services/historyFactory.js"></script>
-    <script src="app/services/adminFactory.js"></script>
-    <script src="app/services/preRegisterFactory.js"></script>
-    <script src="app/services/invoiceFactory.js"></script>
-    <script src="app/services/paymentMethodFactory.js"></script>
-    <script src="app/services/paymentFactory.js"></script>
-    <script src="app/services/paymentDetailFactory.js"></script>
-    <script src="app/services/indexFactory.js"></script>
-    <script src="app/services/merchantImportFactory.js"></script>
 
+    <script src="App/services/LoginFactory.js"></script>
 
     <!--PROVIDERS-->
-    <script src="app/providers/localStorageProvider.js"></script>
+
+    <script src="App/providers/LocalStorageProvider.js"></script>
 
 
     <!--CONTROLLERS-->
     <script src="app/controllers/indexController.js"></script>
-    <script src="app/controllers/loginController.js"></script>
-    <script src="app/controllers/logoutController.js"></script>
-    <script src="app/controllers/cardController.js"></script>
-    <script src="app/controllers/cardOnFileController.js"></script>
-    <script src="app/controllers/customerController.js"></script>
-    <script src="app/controllers/transactionHistoryController.js"></script>
-    <script src="app/controllers/guestAccountController.js"></script>
-    <script src="app/controllers/guestController.js"></script>
-    <script src="app/controllers/guestChargeResultController.js"></script>
-    <script src="app/controllers/guestAchResultController.js"></script>
-    <script src="app/controllers/registerController.js"></script>
-    <script src="app/controllers/historyController.js"></script>
-    <script src="app/controllers/bankController.js"></script>
-    <script src="app/controllers/bankOnFileController.js"></script>
-    <script src="app/controllers/customerAchResultController.js"></script>
-    <script src="app/controllers/customerChargeResultController.js"></script>
-    <script src="app/controllers/adminController.js"></script>
-    <script src="app/controllers/preRegisterController.js"></script>
-    <script src="app/controllers/invoiceController.js"></script>
-    <script src="app/controllers/paymentController.js"></script>
-    <script src="app/controllers/paymentDetailController.js"></script>
-    <script src="app/controllers/customerPaymentController.js"></script>
-    <script src="app/controllers/customerPaymentDetailController.js"></script>
-    <script src="app/controllers/generic/tokenController.js"></script>
-    <script src="app/controllers/insufficientController.js"></script>
-    <!--<script src="app/controllers/generic/signoutController.js"></script>
-    <script src="app/controllers/merchantImportController.js"></script>-->
-    <!--DIRECTIVES-->
-    <script src="app/directives/validationErrors.js"></script>
-    <script src="app/directives/fileSelectDirective.js"></script>
+    <script src="App/controllers/LoginController.js"></script>
 
+    <!--DIRECTIVES-->
+
+    <script src="App/directives/fileSelectDirective.js"></script>
+    <script src="App/directives/ValidationErrors.js"></script>
 
 </head>
 <body>
