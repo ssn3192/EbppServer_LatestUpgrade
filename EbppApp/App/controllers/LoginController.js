@@ -1,6 +1,6 @@
 ﻿'use strict';
 
-app.controller('LoginController', function (
+app.controller('loginController', function (
     $rootScope,
     $location,
     $window,
