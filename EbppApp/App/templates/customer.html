@@ -1,0 +1,123 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>Customer</title>
+    <meta charset="utf-8" />
+</head>
+<body>
+    <div class="container">
+
+
+        <strong>Customer:</strong>
+
+        <form class="form-horizontal">
+            <div class="form-group">
+                <label class="control-label col-sm-2" for="fname">First Name *</label>
+                <div class="col-xs-3">
+                    <input type="text" class="form-control" id="fname" required placeholder="Enter first name" ng-model="vm.model.firstName">
+                </div>
+                <label class="control-label col-sm-2" for="lname">Last Name *</label>
+                <div class="col-xs-3">
+                    <input type="text" class="form-control" id="lname" required placeholder="Enter last name" ng-model="vm.model.lastName">
+                </div>
+            </div>
+
+
+            <div class="form-group">
+                <label class="control-label col-sm-2" for="pnumber">Phone Number *</label>
+                <div class="col-xs-3">
+                    <input type="text" class="form-control" id="pnumber" required placeholder="Enter phone number" ng-model="vm.model.phoneNumber">
+                </div>
+                <label class="control-label col-sm-2" for="email">Email *</label>
+                <div class="col-xs-3">
+                    <input type="text" class="form-control" id="email" required placeholder="Enter email address" ng-model="vm.model.emailAddress">
+                </div>
+            </div>
+            <div class="form-check">
+                <label class="control-label col-sm-2" for="sendemailreceipts"></label>
+                <input class="form-check-input" type="checkbox" value="true"> Email receipts
+            </div>
+
+            <strong>Address:</strong>
+
+            <div class="form-group">
+                <label class="control-label col-sm-2" for="address">Address</label>
+                <div class="col-xs-3">
+                    <input type="text" class="form-control" id="address" required ng-model="vm.model.addressLine1">
+                </div>
+
+                <label class="control-label col-sm-2" for="addressline2">Address Line 2</label>
+                <div class="col-xs-3">
+                    <input type="text" class="form-control" id="addressline2" required>
+                </div>
+            </div>
+
+
+            <div class="form-group">
+                <label class="control-label col-sm-2" for="email">City</label>
+                <div class="col-xs-3">
+                    <input type="text" class="form-control" id="email" required ng-model="vm.model.addressCity">
+                </div>
+
+                <label class="control-label col-sm-2" for="statename">State</label>
+                <div class="col-xs-3">
+                    <input type="text" class="form-control" id="statename" required ng-model="vm.model.addressState">
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label class="control-label col-sm-2" for="zip">ZipCode</label>
+                <div class="col-xs-3">
+                    <input type="text" class="form-control" id="zip" required ng-model="vm.model.addressZip">
+                </div>
+
+                <label class="control-label col-sm-2" for="cname">Country</label>
+                <div class="col-xs-3">
+                    <input type="text" class="form-control" id="cname" required ng-model="vm.model.addressCountry">
+                </div>
+            </div>
+
+            <strong>Compnay Details:</strong>
+            <div class="form-group">
+                <label class="control-label col-sm-2" for="addr">Address</label>
+                <div class="col-xs-3">
+                    <input type="text" class="form-control" id="addr" required ng-model="vm.model.addressCompany">
+                </div>
+
+                <label class="control-label col-sm-2" for="phnumber">Phone Number</label>
+                <div class="col-xs-3">
+                    <input type="text" class="form-control" id="phnumber" required ng-model="vm.model.addressPhone">
+                </div>
+            </div>
+        </form>
+        <button type="button" name="btnUpdate" class="btn btn-primary submit-button" ng-disabled="vm.customerForm.$invalid" ng-click="vm.save()">Update</button>
+        <button type="button" name="btnCards" class="btn btn-default" ng-click="vm.cardRedirect()">Cards</button>
+        <button type="button" name="btnBanks" class="btn btn-default" ng-click="vm.bankRedirect()">Banks</button>
+        <div class="collapse navbar-collapse" id="js-navbar-collapse">
+            <ul class="nav navbar-nav navbar-right">
+                <li><a href="#invoice">Invoice</a></li>
+                <li><a href="#customerPayment">Payment History</a></li>
+                <li><a href="#logout">Logout</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <pre>{{customerModel | json}}</pre>
+
+
+    <h2>MODEL</h2>
+    <pre>{{vm.model | json}}</pre>
+
+    <h2>FIELDS</h2>
+    <pre>{{vm.fields | json}}</pre>
+</body>
+</html>
+
+
+
+
+
+
+
+
+

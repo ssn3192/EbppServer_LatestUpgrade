@@ -1,0 +1,68 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>CardPage</title>
+    <meta charset="utf-8" />
+</head>
+<body>
+    <div class="container">
+
+        <strong> BANK DETAILS</strong>
+        <form class="form-horizontal">
+            <div class="form-group">
+                <label class="control-label col-sm-2" for="nickname">Nick Name *</label>
+                <div class="col-xs-3">
+                    <input type="text" class="form-control" id="nickname" required placeholder="Enter friendly name" ng-model="vm.model.nickname">
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="control-label col-sm-2" for="baccountname">Bank Account Name</label>
+                <div class="col-xs-3">
+                    <input type="text" class="form-control" id="baccountname" required placeholder="Enter bank account name" ng-model="vm.model.bankAccountName">
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label class="control-label col-sm-2" for="naccount">Name on Account *</label>
+                <div class="col-xs-3">
+                    <input type="text" class="form-control" id="naccount" required placeholder="Enter name on account" ng-model="vm.model.nameOnAccount">
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label class="control-label col-sm-2" for="rnumber">Routing Number *</label>
+                <div class="col-xs-3">
+                    <input type="text" class="form-control" id="rnumber" required placeholder="Enter routing number" ng-model="vm.model.routingNumber">
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label class="control-label col-sm-2" for="anumber">Account Number *</label>
+                <div class="col-xs-3">
+                    <input type="text" class="form-control" id="anumber" required placeholder="Enter account number" ng-model="vm.model.dfiAccountNumber">
+                </div>
+            </div>
+
+            <div class="col-md-10">
+
+                <button type="submit" name="btnSave" class="btn btn-primary submit-button" ng-disabled="vm.bankForm.$invalid" ng-click="vm.save()">Save</button>
+            </div>
+        </form>
+
+        <div class="collapse navbar-collapse" id="js-navbar-collapse">
+            <ul class="nav navbar-nav navbar-right">
+                <li><a href="#customer">My Account</a></li>
+                <li><a href="#logout">Logout</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <h2>MODEL</h2>
+    <pre>{{vm.model | json}}</pre>
+
+    <h2>FIELDS</h2>
+    <pre>{{vm.fields | json}}</pre>
+</body>
+</html>
+
+

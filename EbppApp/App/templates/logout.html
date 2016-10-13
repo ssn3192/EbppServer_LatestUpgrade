@@ -1,0 +1,26 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>Logout</title>
+    <meta charset="utf-8" />
+</head>
+<body>
+    <div class="container">
+        <form ng-submit="vm.save()" name="vm.logoutForm" novalidate>
+            <h1>Logout</h1>
+            You are logged out
+            <div class="collapse navbar-collapse" id="js-navbar-collapse">
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="#login">Login</a></li>
+                </ul>
+            </div>
+        </form>
+    </div>
+
+    <h2>MODEL</h2>
+<pre>{{vm.model | json}}</pre>
+
+    <h2>FIELDS</h2>
+<pre>{{vm.fields | json}}</pre>
+</body>
+</html>

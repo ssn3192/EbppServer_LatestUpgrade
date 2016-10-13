@@ -117,6 +117,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="App\controllers\indexController.js" />
     <Content Include="App\controllers\LoginController.js" />
     <Content Include="App\css\style.css" />
     <Content Include="App\directives\fileSelectDirective.js" />
@@ -139,7 +140,25 @@
     <Content Include="App\services\comman\exceptionHandlerFactory.js" />
     <Content Include="App\services\comman\logger.js" />
     <Content Include="App\services\LoginFactory.js" />
+    <Content Include="App\templates\bankOnFile.html" />
+    <Content Include="App\templates\bankVault.html" />
+    <Content Include="App\templates\card.html" />
+    <Content Include="App\templates\cardOnFile.html" />
+    <Content Include="App\templates\customer.html" />
+    <Content Include="App\templates\customerAchResult.html" />
+    <Content Include="App\templates\customerChargeResult.html" />
+    <Content Include="App\templates\customerPayment.html" />
+    <Content Include="App\templates\customerPaymentDetail.html" />
+    <Content Include="App\templates\guest.html" />
+    <Content Include="App\templates\guestAccount.html" />
+    <Content Include="App\templates\guestAchResult.html" />
+    <Content Include="App\templates\guestChargeResult.html" />
+    <Content Include="App\templates\home.html" />
+    <Content Include="App\templates\invoice.html" />
     <Content Include="App\templates\login.html" />
+    <Content Include="App\templates\logout.html" />
+    <Content Include="App\templates\merchantImport.html" />
+    <Content Include="App\templates\payment.html" />
     <Content Include="Global.asax" />
     <Content Include="index.html" />
     <Content Include="scripts\ai.0.22.19-build00125.js" />

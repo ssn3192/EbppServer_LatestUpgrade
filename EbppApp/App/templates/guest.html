@@ -1,0 +1,167 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Guest Page</title>
+
+</head>
+<body>
+
+    <div class="container">
+        <label> Name</label>
+        <br />
+        <br />
+        <form class="form-inline">
+            <div class="form-group">
+                <label for="fname">First Name *</label> <br />
+                <input type="text" class="form-control" id="fname" required ng-model="vm.model.firstName">
+            </div>
+            &nbsp; &nbsp;
+            <div class="form-group">
+                <label for="lname">Last Name *</label> <br />
+                <input type="text" class="form-control" id="lname" required ng-model="vm.model.lastName">
+            </div>
+        </form>
+        <br />
+        <label> Contact Information:</label>
+        <br />
+        <br />
+        <form>
+            <div class="form-group" data-toggle="validator">
+                <label for="email">Email *</label>
+                <input type="email" class="form-control" id="email" required ng-model="vm.model.email">
+            </div>
+            <div class="form-group">
+                <label for="pnumber">Phone </label>
+                <input type="text" class="form-control" id="pnumber" required>
+            </div>
+
+        </form>
+
+        <br />
+        <label> Invoice:</label>
+        <br />
+        <br />
+        <form>
+            <div class="form-group" data-toggle="validator">
+                <label for="amt">Amount *</label>
+                <input type="text" class="form-control" id="amt" required ng-model="vm.model.payThisAmount">
+            </div>
+            <fieldset disabled>
+                <div class="form-group">
+                    <label for="pnumber">Account </label>
+                    <input type="text" id="disabledTextInput" class="form-control" ng-model="vm.model.accountNumber">
+                </div>
+            </fieldset>
+            <div class="form-group">
+                <label for="invoicenumber">Invoice # </label>
+                <input type="text" id="invoicenumber" class="form-control" ng-model="vm.model.invoiceNumber">
+            </div>
+            <div class="form-group">
+                <label for="pmethod">Payment Method *</label>
+                <div class="radio">
+                    <label><input type="radio" name="choice1" value="card" ng-model="vm.selectCard">Card</label> &nbsp;
+                    <label><input type="radio" name="choice2" value="ach" ng-model="vm.selectCard">ACH</label>
+                </div>
+            </div>
+        </form>
+        <!--if user goes with card choice-->
+        <div ng-switch="vm.selectCard">
+            <form class="form-inline" ng-switch-when="card">
+                <div class="row">
+                    <div class="col-md-3">
+                        <div class="form-group">
+                            <label for="fname">Type*</label> <br />
+                            <select class="form-control">
+                                <option>Visa </option>
+                                <option>American Express </option>
+                                <option>Mastercard </option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="form-group">
+                            <label for="num">Number *</label> <br />
+                            <input type="text" class="form-control" id="num" required ng-model="vm.model.ccNumber">
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="form-group">
+                            <label for="cvvnum">Cvv *</label> <br />
+                            <input type="text" class="form-control" id="cvvnum" required>
+                        </div>
+                    </div>
+                </div>
+                <br />
+
+                <div class="row">
+                    <div class="col-md-3">
+                        <div class="form-group">
+                            <label for="mname">Month *</label> <br />
+                            <select class="form-control">
+                                <option>January</option>
+                                <option>Feburay </option>
+                                <option>March </option>
+                                <option>April</option>
+                                <option>May</option>
+                                <option>June</option>
+                                <option>July</option>
+                                <option>August </option>
+                                <option>September </option>
+                                <option>October</option>
+                                <option>November</option>
+                                <option>December</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="form-group">
+                            <label for="yname"> Year *</label> <br />
+                            <select class="form-control">
+                                <option>2016</option>
+                                <option>2017</option>
+                            </select>
+                        </div>
+                    </div>
+
+                </div>
+            </form>
+        </div>
+
+        <!--when it is ach card selected-->
+        <div ng-switch="vm.selectCard">
+            <form class="form-inline" ng-switch-when="ach">
+                <div class="row">
+                    <div class="col-md-3">
+                        <div class="form-group">
+                            <label for="rnumber">Routing Number *</label> <br />
+                            <input type="text" class="form-control" id="rnumber" required ng-model="vm.model.routingNumber">
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="form-group">
+                            <label for="anumber"> Account Number *</label> <br />
+                            <input type="text" class="form-control" id="anumber" required ng-model="vm.model.dfiAccountNumber">
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="form-group">
+                            <label for="cvvnum">Banking Entry Type *</label> <br />
+                            <select class="form-control" ng-model="vm.model.bankingEntryType" required>
+                                <option>Checkings</option>
+                                <option>Savings</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+        <br />
+        <button type="button" name="btnProcess" class="btn btn-primary submit-button" ng-disabled="vm.form.$invalid || vm.isProcessing" ng-click="vm.onSubmit()">Process</button>
+
+    </div>
+
+    <pre>{{vm | json}}</pre>
+</body>
+</html>
+
+

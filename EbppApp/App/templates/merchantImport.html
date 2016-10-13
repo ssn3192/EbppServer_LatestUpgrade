@@ -1,0 +1,17 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Merchant Import</title>
+
+</head>
+<body>
+
+    <div class="container">
+        <form>
+            <input type="file" id="fileInput" ng-model="file.data" file-select="data" file-loaded="myLoaded()" file-error="myError($error)" file-progress="myProgress($total,$loaded)">
+            <br>
+        </form>
+        <button type="button" name="btnLogin" class="btn btn-primary" ng-click="vm.upload()">Upload</button>
+    </div>
+</body>
+</html>

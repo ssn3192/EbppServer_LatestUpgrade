@@ -1,0 +1,131 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>CardPage</title>
+    <meta charset="utf-8" />
+</head>
+<body>
+    <div class="container">
+
+        <strong>Personal Details</strong>
+        <form class="form-horizontal">
+            <div class="form-group">
+                <label class="control-label col-sm-2" for="fname">First Name *</label>
+                <div class="col-xs-3">
+                    <input type="text" class="form-control" id="fname" required placeholder="Enter first name" ng-model="vm.model.firstName">
+                </div>
+                <label class="control-label col-sm-2" for="lname">Last Name *</label>
+                <div class="col-xs-3">
+                    <input type="text" class="form-control" id="lname" required placeholder="Enter last name" ng-model="vm.model.lastName">
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="control-label col-sm-2" for="nickname">Nick Name *</label>
+                <div class="col-xs-3">
+                    <input type="text" class="form-control" id="nickname" required placeholder="Enter friendly name">
+                </div>
+            </div>
+
+            <strong>Card Details</strong>
+
+            <div class="form-group">
+                <label class="control-label col-sm-2" for="paymentMethod">Select Type</label>
+                <div class="col-xs-3">
+                    <select class="form-control" id="paymentMethod" ng-model="paymentRequest.model.paymentTypeResult">
+                        <option>Select Method</option>
+                        <option name="mastercard" value=03>Mastercard</option>
+                        <option name="visacard" value=01>Visa</option>
+                    </select>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="control-label col-sm-2" for="cnumber">Card Number</label>
+                <div class="col-xs-3">
+                    <input type="text" class="form-control" id="cnumber" required ng-model="paymentRequest.accountNumber">
+                </div>
+
+                <label class="control-label col-sm-2" for="cvvnumber">Cvv Number</label>
+                <div class="col-xs-3">
+                    <input type="text" class="form-control" id="cvvnumber" required>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="control-label col-sm-2" for="paymentMethod">Select Type</label>
+                <div class="col-xs-3">
+                    <select class="form-control" id="paymentMethod">
+                        <option>Select Month</option>
+                        <option name="fmonth" value=1>January</option>
+                        <option name="smonth" value=2>Febuary</option>
+                        <option name="tmonth" value=3>March</option>
+                        <option name="fomonth" value=3>April</option>
+                        <option name="fimonth" value=5>May</option>
+                        <option name="simonth" value=6>June</option>
+                        <option name="semonth" value=7>July</option>
+                        <option name="emonth" value=8>August</option>
+                        <option name="nmonth" value=9>September</option>
+                        <option name="temonth" value=10>October</option>
+                        <option name="elmonth" value=11>November</option>
+                        <option name="twmonth" value=12>December</option>
+                    </select>
+
+                </div>
+                <label class="control-label col-sm-2" for="paymentMethod">Select Type</label>
+                <div class="col-xs-3">
+                    <select class="form-control" id="paymentMethod">
+                        <option>Select Year</option>
+                        <option name="choice1" value=1>2016</option>
+                        <option name="choice2" value=2>2017</option>
+                        <option name="choice3" value=3>2018</option>
+                        <option name="choice4" value=3>2019</option>
+                        <option name="choice5" value=3>2020</option>
+                    </select>
+                </div>
+            </div>
+            <strong> Residential Details</strong>
+            <div class="form-group">
+                <label class="control-label col-sm-2" for="addr">Address</label>
+                <div class="col-xs-3">
+                    <input type="text" class="form-control" id="addr">
+                </div>
+                <label class="control-label col-sm-2" for="cityname">City</label>
+                <div class="col-xs-3">
+                    <input type="text" class="form-control" id="cityname">
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="control-label col-sm-2" for="statename">State</label>
+                <div class="col-xs-3">
+                    <input type="text" class="form-control" id="statename">
+                </div>
+                <label class="control-label col-sm-2" for="code">ZipCode</label>
+                <div class="col-xs-3">
+                    <input type="text" class="form-control" id="code">
+                </div>
+
+            </div>
+            <div class="form-group">
+                <label class="control-label col-sm-2" for="countryname">Country</label>
+                <div class="col-xs-3">
+                    <input type="text" class="form-control" id="countryname">
+                </div>
+            </div>
+
+            <div class="col-md-10">
+                <button type="button" name="btnSave" class="btn btn-primary" ng-disabled="vm.cardForm.$invalid" ng-click="vm.save()">Save</button>
+            </div>
+        </form>
+
+        <div class="collapse navbar-collapse" id="js-navbar-collapse">
+            <ul class="nav navbar-nav navbar-right">
+                <li><a href="#customer">My Account</a></li>
+                <li><a href="#logout">Logout</a></li>
+            </ul>
+        </div>
+    </div>
+    <h2>MODEL</h2>
+    <pre>{{vm.model | json}}</pre>
+
+
+</body>
+</html>
+

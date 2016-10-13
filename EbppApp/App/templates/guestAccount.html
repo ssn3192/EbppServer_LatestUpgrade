@@ -1,0 +1,53 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>Guest Account</title>
+    <meta charset="utf-8" />
+</head>
+<body>
+    <div class="container">
+        By entering account number and clicking proceed you agree to terms and conditions etc.
+    </div>
+    <div class="container">
+        Thank you for using County of Hawaii's online payment service. Administrative fees associated with online payments will be passed on to
+        you in the form of an additional fee <br /> by the online vendor.The fee will be disclosed to you when you confirm the payment. <br />
+        <br />
+        <b> Administrative</b> fees apply to each online water payment processed. There is a $2.50 fee for Credit Card payments with a $5,000 limit per payment transaction. For <br />
+        electronic check payments drawn on US Banks there is a fee of $3.50 per payment transaction. Electronic check payments from Non-US Banks are not allowed.
+        <br /> <br />
+        <b>Returned Payments:</b> If your electronic check or credit card payment is returned or disputed for any reason you are responsible for the full amount of the payment (including <br />
+        the administrative fees) plus $25.00.
+        <br /> <br />
+        Payments made on this site will be applied first to administrative fee, then to 'Amount Due' for water bill. Please allow 5-7 business days for processing and posting of your <br />
+        payment to your water account. Your payment may not appear on your next water bill and a late penalty may be charged to your account if the payment due date on your last <br />
+        water bill is within 1 week of this online payment transaction.The information on this site is subject to daily changes; time permitting, we normally refresh the data on this site <br />
+        on a weekly basis. Users must understand that the water bill information may change at any time. Persons using this data should NOT rely upon this information in <br />
+        formulating important decisions that affect their financial future nor should this information be considered as legal documentation. No warranties, expressed or implied, are <br />
+        provided for the data herein, its use or its interpretation. Selecting 'I Agree' indicates understanding and acceptance of all statements on this page by the user. Thank you.
+
+        <br /><br />
+        <b>Note:</b> Water bills listed on this website are for accounts on the island of Hawaii and do not include water accounts for the other Hawaiian islands (ie. Oahu, Maui, Kauai).
+
+        <br />
+        <br />
+        <validation-errors></validation-errors>
+        <form name="vm.guestAccountForm" novalidate>
+            <div class="checkbox">
+                <label><input type="checkbox" name="acceptTerms" ng-model="vm.acceptTerms">I Agree</label>
+            </div>
+            <div class="form-group" data-toggle="validator">
+                <label for="acctnumber">Account Number *</label>
+                <input type="text" class="form-control" id="acctnumber" placeholder="Enter Account Number" required ng-model="vm.accountNumber">
+            </div>
+            <button type="submit" name="btnProceed" class="btn btn-primary submit-button" ng-disabled="vm.guestAccountForm.$invalid" ng-click="vm.proceed()">Proceed</button>
+        </form>
+    </div>
+
+    <pre>{{vm | json}}</pre>
+
+
+</body>
+</html>
+
+
+

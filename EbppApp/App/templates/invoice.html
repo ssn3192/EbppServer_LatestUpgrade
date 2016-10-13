@@ -1,0 +1,144 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Guest Page</title>
+
+</head>
+<body>
+
+    <div class="container">
+        <strong>Invoice Details:</strong>
+        <form class="form-horizontal">
+            <div class="form-group">
+                <label class="control-label col-sm-2" for="acctnumber">Account Number *</label>
+                <div class="col-sm-10">
+                    <input type="text" class="form-control" id="acctnumber" required ng-model="vm.model.accountNumber">
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="control-label col-sm-2" for="duedate">Due Date *</label>
+                <div class="col-sm-10">
+                    <input type="text" class="form-control" id="duedate" required ng-model="vm.model.dueDateUtc">
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="control-label col-sm-2" for="amtdue">Amount Due *</label>
+                <div class="col-sm-10">
+                    <input type="text" class="form-control" id="amtdue" required ng-model="vm.model.amountDue">
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="control-label col-sm-2" for="tandc">Terms & Conditions</label>
+
+                <div class="radio">
+                    <label><input type="radio" name="show" value="true" ng-model="goforchoice">Show</label>
+                    <label><input type="radio" name="hide" value="false" ng-model="goforchoice">Hide</label>
+                </div>
+            </div>
+
+            <!--display terms and condition-->
+            <div ng-switch="goforchoice">
+                <div ng-switch-when="true">
+                    Thank you for using County of Hawaii's online payment service. Administrative fees associated with online payments will be passed on to
+                    you in the form of an additional fee <br /> by the online vendor.The fee will be disclosed to you when you confirm the payment. <br />
+                    <br />
+                    <b> Administrative</b> fees apply to each online water payment processed. There is a $2.50 fee for Credit Card payments with a $5,000 limit per payment transaction. For <br />
+                    electronic check payments drawn on US Banks there is a fee of $3.50 per payment transaction. Electronic check payments from Non-US Banks are not allowed.
+                    <br /> <br />
+                    <b>Returned Payments:</b> If your electronic check or credit card payment is returned or disputed for any reason you are responsible for the full amount of the payment (including <br />
+                    the administrative fees) plus $25.00.
+                    <br /> <br />
+                    Payments made on this site will be applied first to administrative fee, then to 'Amount Due' for water bill. Please allow 5-7 business days for processing and posting of your <br />
+                    payment to your water account. Your payment may not appear on your next water bill and a late penalty may be charged to your account if the payment due date on your last <br />
+                    water bill is within 1 week of this online payment transaction.The information on this site is subject to daily changes; time permitting, we normally refresh the data on this site <br />
+                    on a weekly basis. Users must understand that the water bill information may change at any time. Persons using this data should NOT rely upon this information in <br />
+                    formulating important decisions that affect their financial future nor should this information be considered as legal documentation. No warranties, expressed or implied, are <br />
+                    provided for the data herein, its use or its interpretation. Selecting 'I Agree' indicates understanding and acceptance of all statements on this page by the user. Thank you.
+
+                    <br /><br />
+                    <b>Note:</b> Water bills listed on this website are for accounts on the island of Hawaii and do not include water accounts for the other Hawaiian islands (ie. Oahu, Maui, Kauai).
+
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label class="control-label col-sm-2" for="termaccept">Terms Acceptance</label>
+
+
+                <!--<label class="control-label col-sm-2" for="sendemailreceipts"></label>-->
+                <input class="form-check-input" type="checkbox" value="true"> I Agree
+
+            </div>
+        </form>
+        <strong>Payment:</strong>
+        <form class="form-horizontal" name="paymentForm">
+            <div class="form-group">
+                <label class="control-label col-sm-2" for="amt">Amount *</label>
+                <div class="col-sm-10">
+                    <input type="text" class="form-control" id="amt" required placeholder="Enter amount to pay" ng-model="vm.model.payThisAmount">
+                </div>
+            </div>
+            <fieldset disabled>
+                <div class="form-group" ng-switch="vm.model.paymentMethod">
+                    <label for="fee" class="col-sm-2 control-label">Fee</label>
+                    <div class="col-sm-10" ng-switch-when="card">
+                        <input type="text" id="fee" class="form-control" ng-model="vm.model.cardfee">
+                    </div>
+
+                    <div class="col-sm-10" ng-switch-when="ach">
+                        <input type="text" id="fee" class="form-control" ng-model="vm.model.achfee">
+                    </div>
+                </div>
+            </fieldset>
+            <div class="form-group">
+                <label class="control-label col-sm-2" for="paymentMethod">Payment Method</label>
+                <div class="col-sm-10">
+                    <select class="form-control" id="paymentMethod" ng-model="vm.model.paymentMethod" ng-change="vm.paymentMethodChanged()">
+                        <option>Select Method</option>
+                        <option name="card" value="card">Card</option>
+                        <option name="ach" value="ach">ACH</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label class="control-label col-sm-2" for="selectPaymentAccount">Select Payment Account</label>
+                <div class="col-sm-10">
+                    <select class="form-control" id="selectPaymentAccount" ng-model="vm.model.selectPaymentMethod"
+                            ng-options="row.value as row.name for row in vm.selectPaymentAccount"
+                            ng-change="vm.selectPaymentMethodChanged()"></select>
+                </div>
+
+
+              
+            </div>
+
+
+
+            <div class="col-sm-10">
+                <button type="button" name="btnProcess" class="btn btn-default" ng-click="vm.processPayment()">Process Payment</button>
+            </div>
+
+        </form>
+        <div class="collapse navbar-collapse" id="js-navbar-collapse">
+            <ul class="nav navbar-nav navbar-right">
+                <li><a href="#customer">My Account</a></li>
+                <li><a href="#logout">Logout</a></li>
+            </ul>
+        </div>
+
+    </div>
+
+    <h2>vm.selectPaymentAccount</h2>
+    <pre>{{vm.selectPaymentAccount | json}}</pre>
+
+
+    <h2>vm.select</h2>
+    <pre>{{vm.select | json}}</pre>
+
+    <h2>vm.model</h2>
+    <pre>{{vm.model | json}}</pre>
+
+
+</body>
+</html>
