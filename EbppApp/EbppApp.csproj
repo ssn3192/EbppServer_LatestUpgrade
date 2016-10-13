@@ -119,6 +119,13 @@
   <ItemGroup>
     <Content Include="App\controllers\bankOnFileController.js" />
     <Content Include="App\controllers\bankVaultController.js" />
+    <Content Include="App\controllers\cardController.js" />
+    <Content Include="App\controllers\cardOnFileController.js" />
+    <Content Include="App\controllers\customerAchResultController.js" />
+    <Content Include="App\controllers\customerChargeResultController.js" />
+    <Content Include="App\controllers\customerController.js" />
+    <Content Include="App\controllers\customerPaymentController.js" />
+    <Content Include="App\controllers\customerPaymentDetailController.js" />
     <Content Include="App\controllers\guestAccountController.js" />
     <Content Include="App\controllers\guestAchResultController.js" />
     <Content Include="App\controllers\guestChargeResultController.js" />
