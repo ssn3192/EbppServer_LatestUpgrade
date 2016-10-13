@@ -117,6 +117,26 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="App\controllers\LoginController.js" />
+    <Content Include="App\css\style.css" />
+    <Content Include="App\directives\fileSelectDirective.js" />
+    <Content Include="App\directives\ValidationErrors.js" />
+    <Content Include="App\fileReader\app.js" />
+    <Content Include="App\fileReader\fileImport.html" />
+    <Content Include="App\fileReader\upload.js" />
+    <Content Include="App\images\AtlantaWatershed.png" />
+    <Content Include="App\images\bannerHI.jpg" />
+    <Content Include="App\images\enfoTechLogo.png" />
+    <Content Include="App\images\groupEzLogo.png" />
+    <Content Include="App\images\planoLogo.png" />
+    <Content Include="App\images\Seal_of_Atlanta.jpg" />
+    <Content Include="App\infrastructure\app.js" />
+    <Content Include="App\infrastructure\config.js" />
+    <Content Include="App\infrastructure\routing.js" />
+    <Content Include="App\infrastructure\runner.js" />
+    <Content Include="App\providers\LocalStorageProvider.js" />
+    <Content Include="App\services\LoginFactory.js" />
+    <Content Include="App\templates\login.html" />
     <Content Include="Global.asax" />
     <Content Include="index.html" />
     <Content Include="scripts\ai.0.22.19-build00125.js" />
@@ -146,15 +166,6 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="App\controllers\" />
-    <Folder Include="App\css\" />
-    <Folder Include="App\directives\" />
-    <Folder Include="App\fileReader\" />
-    <Folder Include="App\images\" />
-    <Folder Include="App\infrastructure\" />
-    <Folder Include="App\providers\" />
-    <Folder Include="App\services\" />
-    <Folder Include="App\templates\" />
     <Folder Include="App_Data\" />
     <Folder Include="Controllers\" />
     <Folder Include="Models\" />

@@ -1,10 +1,289 @@
-﻿<!DOCTYPE html>
-<html>
+﻿<!-- index.html -->
+
+<!DOCTYPE html>
+<html ng-app="clickHereToPayMoney" ng-controller="indexController as vm">
 <head>
-    <title></title>
-	<meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <title>Hawaii County Water</title>
+
+
+    <!--FAVICON-->
+    <link href="favicon.ico" rel="icon" type="image/x-icon" />
+    <link href="bower_components/angular-bootstrap/ui-bootstrap-csp.css" rel="stylesheet" />
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+    <!-- Latest compiled and minified JavaScript -->
+
+    <link href="node_modules/angular-ui-grid/ui-grid.css" rel="stylesheet" />
+    <link href="app/css/style.css" rel="stylesheet" />
+    <link href="bower_components/AngularJS-Toaster/toaster.css" rel="stylesheet" />
+    <link href="bower_components/angular-ui-select/dist/select.css" rel="stylesheet" />
+    <!-- APPLICATION DEPENDENCIES -->
+    <!--<script src="bower_components/angular/angular.js"></script>-->
+    <script src="bower_components/bower-angularjs/angular.js"></script>
+    <script src="bower_components/angular-animate/angular-animate.js"></script>
+    <script src="bower_components/angular-local-storage/dist/angular-local-storage.js"></script>
+    <script src="scripts/spin.js"></script>
+    <script src="bower_components/angular-spinner/angular-spinner.js"></script>
+    <script src="bower_components/AngularJS-Toaster/toaster.js"></script>
+    <script src="bower_components/angular-jwt/dist/angular-jwt.js"></script>
+    <script src="bower_components/ng-currency/dist/ng-currency.js"></script>
+    <script src="bower_components/api-check/dist/api-check.js"></script>
+    <script src="bower_components/angular-bootstrap/ui-bootstrap.js"></script>
+    <script src="bower_components/angular-route/angular-route.js"></script>
+    <script src="bower_components/moment/moment.js"></script>
+    <script src="bower_components/angular-moment/angular-moment.js"></script>
+
+    <script src="bower_components/bower_components/angular-credit-cards/release/angular-credit-cards.js"></script>
+    <script src="bower_components/bower_components/pdfmake/build/pdfmake.js"></script>
+
+    <script src="bower_components/bower_components/pdfmake/build/vfs_fonts.js"></script>
+    <script src="bower_components/angular-messages/angular-messages.js"></script>
+    <script src="bower_components/bower_components/jquery/dist/jquery.js"></script>
+    <script src="bower_components/angular-ui-select/dist/select.js"></script>
+
+
+    <script src="node_modules/angular-ui-grid/ui-grid.min.js"></script>
+
+    <!--SECURENET-->
+    <script type="text/javascript" src="https://gwapi.demo.securenet.com/v1/PayOS.js"></script>
+
+    <!-- APPLICATION SCRIPTS -->
+    <!--INFRASTRUCTURE-->
+    <script src="app/infrastructure/app.js"></script>
+    <script src="app/services/common/common.js"></script>
+    <script src="app/services/common/logger.js"></script>
+    <script src="app/infrastructure/routing.js"></script>
+    <script src="app/infrastructure/config.js"></script>
+    <script src="app/infrastructure/runner.js"></script>
+
+
+    <!--SERVICES-->
+    <!--<script src="app/services/authService.js"></script>-->
+    <!--FACTORIES-->
+    <script src="app/services/globalFactory.js"></script>
+    <script src="app/services/loginFactory.js"></script>
+    <script src="app/services/secureNetTokenFactory.js"></script>
+    <script src="app/services/secureNetCustomerFactory.js"></script>
+    <script src="app/services/secureNetChargeFactory.js"></script>
+    <script src="app/services/cardFactory.js"></script>
+    <script src="app/services/cardOnFileFactory.js"></script>
+    <script src="app/services/customerFactory.js"></script>
+    <script src="app/services/guestFactory.js"></script>
+    <script src="app/services/merchantFactory.js"></script>
+    <script src="app/services/registerFactory.js"></script>
+    <script src="app/services/transactionHistoryFactory.js"></script>
+    <script src="app/services/achHistoryFactory.js"></script>
+    <script src="app/services/bankFactory.js"></script>
+    <script src="app/services/bankOnFileFactory.js"></script>
+    <script src="app/services/achFactory.js"></script>
+    <script src="app/services/historyFactory.js"></script>
+    <script src="app/services/adminFactory.js"></script>
+    <script src="app/services/preRegisterFactory.js"></script>
+    <script src="app/services/invoiceFactory.js"></script>
+    <script src="app/services/paymentMethodFactory.js"></script>
+    <script src="app/services/paymentFactory.js"></script>
+    <script src="app/services/paymentDetailFactory.js"></script>
+    <script src="app/services/indexFactory.js"></script>
+    <script src="app/services/merchantImportFactory.js"></script>
+
+
+    <!--PROVIDERS-->
+    <script src="app/providers/localStorageProvider.js"></script>
+
+
+    <!--CONTROLLERS-->
+    <script src="app/controllers/indexController.js"></script>
+    <script src="app/controllers/loginController.js"></script>
+    <script src="app/controllers/logoutController.js"></script>
+    <script src="app/controllers/cardController.js"></script>
+    <script src="app/controllers/cardOnFileController.js"></script>
+    <script src="app/controllers/customerController.js"></script>
+    <script src="app/controllers/transactionHistoryController.js"></script>
+    <script src="app/controllers/guestAccountController.js"></script>
+    <script src="app/controllers/guestController.js"></script>
+    <script src="app/controllers/guestChargeResultController.js"></script>
+    <script src="app/controllers/guestAchResultController.js"></script>
+    <script src="app/controllers/registerController.js"></script>
+    <script src="app/controllers/historyController.js"></script>
+    <script src="app/controllers/bankController.js"></script>
+    <script src="app/controllers/bankOnFileController.js"></script>
+    <script src="app/controllers/customerAchResultController.js"></script>
+    <script src="app/controllers/customerChargeResultController.js"></script>
+    <script src="app/controllers/adminController.js"></script>
+    <script src="app/controllers/preRegisterController.js"></script>
+    <script src="app/controllers/invoiceController.js"></script>
+    <script src="app/controllers/paymentController.js"></script>
+    <script src="app/controllers/paymentDetailController.js"></script>
+    <script src="app/controllers/customerPaymentController.js"></script>
+    <script src="app/controllers/customerPaymentDetailController.js"></script>
+    <script src="app/controllers/generic/tokenController.js"></script>
+    <script src="app/controllers/insufficientController.js"></script>
+    <!--<script src="app/controllers/generic/signoutController.js"></script>
+    <script src="app/controllers/merchantImportController.js"></script>-->
+    <!--DIRECTIVES-->
+    <script src="app/directives/validationErrors.js"></script>
+    <script src="app/directives/fileSelectDirective.js"></script>
+
+
 </head>
 <body>
 
+    <div class="container">
+        <div>
+            <img ng-src="{{vm.logo}}" />
+        </div>
+        <div class="collapse navbar-collapse" id="js-navbar-collapse">
+            <ul class="nav navbar-nav navbar-right">
+                <!--<li><a href="#createToken">CreateToken</a></li>
+                <li><a href="#guestAccount">Guest</a></li>
+                <li><a href="#register">Register</a></li>
+                <li><a href="#login">Login</a></li>
+                <li><a href="#logout">Logout</a></li>-->
+                <li><a href="#merchantImport">Merchant Import</a></li>
+
+            </ul>
+        </div>
+    </div>
+
+
+    <!--DIRECTIVES-->
+    <span us-spinner="{radius:30, width:8, length: 16}" spinner-key="spinner-1"></span>
+    <toaster-container toaster-options="{
+        'time-out': 1000000,
+        'body-output-type': 'trustedHtml'
+    }"></toaster-container>
+
+    <div ng-view></div>
+
+
+    <!--<!--CUSTOM TEMPLATES-->
+    <!--PANEL-->
+    <script type="text/ng-template" id="panel.html">
+        <div class="panel panel-primary">
+
+            <div class="panel-heading px-nested-panel-heading clearfix">
+                <strong class="control-label" ng-if="options.templateOptions.label">
+                    {{options.templateOptions.label}}
+                </strong>
+            </div>
+
+            <div class="panel-body px-nested-panel-body">
+                <formly-transclude></formly-transclude>
+            </div>
+
+        </div>
+    </script>
+
+    <!--HARD CODED TEXT-->
+    <script type="text/ng-template" id="terms.html">
+        <div>Thank you for using County of Hawaii's online payment service. Administrative fees associated with online payments will be passed on to you in the form of an additional fee by the online vendor. The fee will be disclosed to you when you confirm the payment.<br /><br /><b>Administrative</b> fees apply to each online water payment processed. There is a $2.50 fee for Credit Card payments with a $5,000 limit per payment transaction. For electronic check payments drawn on US Banks there is a fee of $3.50 per payment transaction. Electronic check payments from Non-US Banks are not allowed.<br /><br /> <b>Returned Payments:</b> If your electronic check or credit card payment is returned or disputed for any reason you are responsible for the full amount of the payment (including the administrative fees) plus $25.00. <br /><br />Payments made on this site will be applied first to administrative fee, then to 'Amount Due' for water bill. Please allow 5-7 business days for processing and posting of your payment to your water account. Your payment may not appear on your next water bill and a late penalty may be charged to your account if the payment due date on your last water bill is within 1 week of this online payment transaction.The information on this site is subject to daily changes; time permitting, we normally refresh the data on this site on a weekly basis. Users must understand that the water bill information may change at any time. Persons using this data should NOT rely upon this information in formulating important decisions that affect their financial future nor should this information be considered as legal documentation. No warranties, expressed or implied, are provided for the data herein, its use or its interpretation. Selecting 'I Agree' indicates understanding and acceptance of all statements on this page by the user. Thank you.<br /><br /> <b>Note:</b> Water bills listed on this website are for accounts on the island of Hawaii and do not include water accounts for the other Hawaiian islands (ie. Oahu, Maui, Kauai).</div>
+    </script>
+
+    <!--HORIZONTAL LABEL-->
+    <script type="text/ng-template" id="label-wrapper.html">
+        <div>
+            <label for="{{id}}" class="control-label" ng-class="formState.horizontalLabelClass">
+                {{to.label}} {{to.required ? '*' : ''}}
+            </label>
+            <div ng-class="formState.horizontalFieldClass">
+                <formly-transclude></formly-transclude>
+            </div>
+        </div>
+    </script>
+    <script type="text/ng-template" id="input-template.html">
+        <div>
+            <input ng-if="!formState.readOnly" class="form-control" ng-model="model[options.key]">
+            <p ng-if="formState.readOnly" class="form-control-static">{{model[options.key]}}</p>
+        </div>
+    </script>
+
+    <script type="text/ng-template" id="datepicker.html">
+        <input type="text"
+               id="{{::id}}"
+               name="{{::id}}"
+               ng-model="model[options.key]"
+               class="form-control"
+               ng-click="datepicker.open($event)"
+               uib-datepicker-popup="{{to.datepickerOptions.format}}"
+               is-open="datepicker.opened"
+               datepicker-options="to.datepickerOptions" />
+        <span class="input-group-btn">
+            <button type="button" class="btn btn-default" ng-click="datepicker.open($event)" ng-disabled="to.disabled"><i class="glyphicon glyphicon-calendar"></i></button>
+        </span>
+    </script>
+
+    <!--UI-SELECT-SINGLE-->
+
+    <script type="text/ng-template" id="ui-select-single.html">
+        <ui-select data-ng-model="model[options.key]" data-required="{{to.required}}" data-disabled="{{to.disabled}}" theme="bootstrap">
+            <ui-select-match placeholder="{{to.placeholder}}" data-allow-clear="true">{{$select.selected[to.labelProp]}}</ui-select-match>
+            <ui-select-choices data-repeat="{{to.ngOptions}}">
+                <div ng-bind-html="option[to.labelProp]"></div>
+            </ui-select-choices>
+        </ui-select>
+    </script>
+
+    <!--   MYMODALCONTENT.HTML-->
+
+
+    <script type="text/ng-template" id="myModalContent.html">
+        <div class="modal-header">
+            <h3 class="modal-title">I'm a modal!</h3>
+        </div>
+        <div class="modal-body">
+            <formly-form model="vm.formData.model" fields="vm.formData.fields" form="vm.form" options="vm.formData.options">
+            </formly-form>
+            <hr />
+            <label>
+                <input type="checkbox" ng-model="vm.showData" /> Show form data
+            </label>
+            <div ng-if="vm.showData">
+                <h2>Model Value</h2>
+                <pre>{{vm.formData.model | json}}</pre>
+                <h2>Fields <small>(note, functions are not shown)</small></h2>
+                <pre>{{vm.originalFields | json}}</pre>
+                <h2>Form</h2>
+                <pre>{{vm.form | json}}</pre>
+            </div>
+        </div>
+        <div class="modal-footer">
+            <button class="btn btn-primary" ng-click="vm.ok()">OK</button>
+            <button class="btn btn-warning" ng-click="vm.cancel()">Cancel</button>
+        </div>
+    </script>
+
+    <!--INLINE RADIO-->
+    <script type="text/ng-template" id="inline-radio.html">
+        <div class="radio-group">
+
+            <label ng-repeat="(key, option) in to.options" class="radio-inline">
+                <input type="radio"
+                       id="{{id + '_'+ $index}}"
+                       tabindex="0"
+                       ng-value="option[to.valueProp || 'value']"
+                       ng-model="model[options.key]">
+                {{option[to.labelProp || 'name']}}
+            </label>
+
+        </div>
+    </script>
+
+    <!--ERROR MESSAGES-->
+    <script type="text/ng-template" id="error-messages.html">
+        <formly-transclude></formly-transclude>
+        <div ng-messages="fc.$error" ng-if="form.$submitted || options.formControl.$touched" class="error-messages">
+            <div ng-message="{{ ::name }}" ng-repeat="(name, message) in ::options.validation.messages" class="message">{{ message(fc.$viewValue, fc.$modelValue, this)}}</div>
+        </div>
+    </script>
+
 </body>
+
+
 </html>
