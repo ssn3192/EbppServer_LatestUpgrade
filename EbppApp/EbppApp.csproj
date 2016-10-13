@@ -117,8 +117,20 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="App\controllers\bankOnFileController.js" />
+    <Content Include="App\controllers\bankVaultController.js" />
+    <Content Include="App\controllers\guestAccountController.js" />
+    <Content Include="App\controllers\guestAchResultController.js" />
+    <Content Include="App\controllers\guestChargeResultController.js" />
+    <Content Include="App\controllers\guestController.js" />
     <Content Include="App\controllers\indexController.js" />
-    <Content Include="App\controllers\LoginController.js" />
+    <Content Include="App\controllers\invoiceController.js" />
+    <Content Include="App\controllers\loginController.js" />
+    <Content Include="App\controllers\logoutController.js" />
+    <Content Include="App\controllers\paymentController.js" />
+    <Content Include="App\controllers\paymentDetailController.js" />
+    <Content Include="App\controllers\preRegisterController.js" />
+    <Content Include="App\controllers\registerController.js" />
     <Content Include="App\css\style.css" />
     <Content Include="App\directives\fileSelectDirective.js" />
     <Content Include="App\directives\ValidationErrors.js" />
@@ -159,6 +171,12 @@
     <Content Include="App\templates\logout.html" />
     <Content Include="App\templates\merchantImport.html" />
     <Content Include="App\templates\payment.html" />
+    <Content Include="App\templates\paymentDetail.html" />
+    <Content Include="App\templates\preRegister.html" />
+    <Content Include="App\templates\register.html" />
+    <Content Include="App\templates\signout.html" />
+    <Content Include="App\templates\token.html" />
+    <Content Include="App\templates\validationErrors.html" />
     <Content Include="Global.asax" />
     <Content Include="index.html" />
     <Content Include="scripts\ai.0.22.19-build00125.js" />

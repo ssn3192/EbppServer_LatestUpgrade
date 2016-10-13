@@ -1,0 +1,106 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Guest Page</title>
+
+</head>
+<body>
+
+<div class="container">
+    <form class="form-horizontal" name="registerForm">
+        <div class="row">
+            <div class="col-sm-1">
+            </div>
+            <div class="col-sm-3">
+                <div class="form-group">
+                    <label for="fname">First Name *</label> <br/>
+                    <input type="text" class="form-control" id="fname" required ng-model="vm.model.firstName">
+                </div>
+            </div>
+            <div class="col-sm-1">
+            </div>
+            <div class="col-sm-3">
+                <div class="form-group">
+                    <label for="lname">Last Name *</label> <br/>
+                    <input type="text" class="form-control" id="lname" required ng-model="vm.model.lastName">
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-1">
+            </div>
+            <div class="col-sm-3">
+                <div class="form-group">
+                    <label for="pnumber">Phone *</label> <br/>
+                    <input type="text" class="form-control" id="pnumber" required ng-model="vm.model.phoneNumber">
+                </div>
+            </div>
+            <div class="col-sm-1">
+            </div>
+            <div class="col-sm-3">
+                <div class="form-group">
+                    <label for="">Account Number*</label> <br/>
+                    <input type="text" class="form-control" id="anumber" required  ng-model="vm.model.accountNumber">
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-1">
+            </div>
+            <div class="col-sm-9">
+                <div class="form-group">
+                    <label for="uname"> User Name *</label> <br/>
+                    <input type="text" class="form-control" id="uname" required ng-model="vm.model.username">
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-1">
+            </div>
+            <div class="col-sm-9">
+                <div class="form-group">
+                    <label for="pwd"> Password *</label> <br/>
+                    <input type="password" class="form-control" id="pwd" required ng-model="vm.model.password">
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-1">
+            </div>
+            <div class="col-sm-9">
+                <div class="form-group">
+                    <label for="cpwd"> Confirm Password *</label> <br/>
+                    <input type="password" class="form-control" id="cpwd" required ng-model="vm.model.confirmPassword">
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-1">
+            </div>
+            <div class="col-sm-9">
+                <div class="form-group">
+                    <label for="email"> Email *</label> <br/>
+                    <input type="email" class="form-control" id="email" required ng-model="vm.model.email">
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-1">
+            </div>
+
+            <button type="button" name="btnRegister" class="btn btn-primary" ng-disabled="vm.registerForm.$invalid" ng-click="vm.register()">Register</button>
+
+        </div>
+    </form>
+
+</div>
+    <h2>MODEL</h2>
+    <pre>{{vm.model | json}}</pre>
+
+    <h2>FIELDS</h2>
+    <pre>{{vm.fields | json}}</pre>
+</body>
+</html>
+
+
+

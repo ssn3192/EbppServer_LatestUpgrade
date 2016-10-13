@@ -1,0 +1,22 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>Create Token</title>
+    <meta charset="utf-8" />
+</head>
+<body>
+    <div class="container">
+        <form ng-submit="vm.submit()" name="vm.tokenForm" novalidate>
+            <formly-form model="vm.model" fields="vm.fields" form="vm.tokenForm" options="vm.options">
+                <button type="submit" name="btnToken" class="btn btn-primary submit-button" ng-disabled="vm.tokenForm.$invalid">Submit</button>
+            </formly-form>
+        </form>
+    </div>
+
+    <h2>MODEL</h2>
+    <pre>{{vm.model | json}}</pre>
+
+    <h2>FIELDS</h2>
+    <pre>{{vm.fields | json}}</pre>
+</body>
+</html>

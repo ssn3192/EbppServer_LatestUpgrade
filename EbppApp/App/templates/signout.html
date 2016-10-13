@@ -1,0 +1,29 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>Signout</title>
+    <meta charset="utf-8" />
+</head>
+<body ng-controller="invoiceController as vm">
+    <div class="container">
+        <validation-errors></validation-errors>
+        <form name="vm.signoutForm" novalidate>
+            <h1>Signout</h1>
+            You are now signed out.
+            <formly-form model="vm.model" fields="vm.fields" form="vm.signoutForm" options="vm.options">
+                <div class="collapse navbar-collapse" id="js-navbar-collapse">
+                    <ul class="nav navbar-nav navbar-right">
+                        <li><a href="#login">Login</a></li>
+                    </ul>
+                </div>
+            </formly-form>
+        </form>
+    </div>
+
+    <h2>MODEL</h2>
+    <pre>{{vm.model | json}}</pre>
+
+    <h2>FIELDS</h2>
+    <pre>{{vm.fields | json}}</pre>
+</body>
+</html>
