@@ -1,0 +1,33 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RetailClientFrontEnd", "RetailClientFrontEnd\RetailClientFrontEnd.csproj", "{66374D6A-7BA5-40B0-88BA-A4D62F846932}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "EbppFrontEndPart", "EbppFrontEndPart", "{6EBCB1E7-0965-4EB8-99CB-03062D7545DF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EbppApp", "EbppApp\EbppApp.csproj", "{0B92153D-F317-41B2-A5CD-3B2EB67CCAFB}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{66374D6A-7BA5-40B0-88BA-A4D62F846932}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{66374D6A-7BA5-40B0-88BA-A4D62F846932}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{66374D6A-7BA5-40B0-88BA-A4D62F846932}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{66374D6A-7BA5-40B0-88BA-A4D62F846932}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0B92153D-F317-41B2-A5CD-3B2EB67CCAFB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0B92153D-F317-41B2-A5CD-3B2EB67CCAFB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0B92153D-F317-41B2-A5CD-3B2EB67CCAFB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0B92153D-F317-41B2-A5CD-3B2EB67CCAFB}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{0B92153D-F317-41B2-A5CD-3B2EB67CCAFB} = {6EBCB1E7-0965-4EB8-99CB-03062D7545DF}
+	EndGlobalSection
+EndGlobal
