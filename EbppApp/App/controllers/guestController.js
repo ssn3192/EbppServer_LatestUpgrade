@@ -59,8 +59,6 @@
 
         common.configErrorHandling($scope, vm, ['email', 'routingNumber', 'dfiAccountNumber']);
 
-    
-
         //FUNCTIONS 
         //TODO: Move some into factory?
 

@@ -21,5 +21,5 @@ var app = angular.module('clickHereToPayMoney', [
     'ngAnimate',
     'angularMoment',
     'ng-currency',
-    'ngMessages'
+    'ngMessages',
 ]);
