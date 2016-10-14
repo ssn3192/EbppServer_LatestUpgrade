@@ -3,7 +3,7 @@
 app.factory('globalFactory', function ($q) {
     var service = {};
 
-    var urlBase = 'http://localhost:59432/api';
+    var urlBase = 'http://localhost:50690/api';
 
     service.getUrlBase = function () {
         return urlBase;

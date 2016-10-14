@@ -162,7 +162,7 @@
     <Content Include="App\infrastructure\config.js" />
     <Content Include="App\infrastructure\routing.js" />
     <Content Include="App\infrastructure\runner.js" />
-    <Content Include="App\providers\LocalStorageProvider.js" />
+    <Content Include="App\providers\localStorageProvider.js" />
     <Content Include="App\services\achFactory.js" />
     <Content Include="App\services\authService.js" />
     <Content Include="App\services\bankOnFileFactory.js" />
@@ -187,7 +187,6 @@
     <Content Include="App\services\secureNetChargeFactory.js" />
     <Content Include="App\services\secureNetCustomerFactory.js" />
     <Content Include="App\services\secureNetTokenFactory.js" />
-    <Content Include="App\services\transactionHistroyFactory.js" />
     <Content Include="App\templates\bankOnFile.html" />
     <Content Include="App\templates\bankVault.html" />
     <Content Include="App\templates\card.html" />
@@ -221,7 +220,7 @@
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="App\services\App_Start\WebApiConfig.cs" />
+    <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
