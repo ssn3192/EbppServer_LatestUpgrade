@@ -131,7 +131,7 @@ app.config(function ($routeProvider) {
         })
         .when('/login', {
             templateUrl: 'App/templates/login.html',
-            controller: 'LoginController',
+            controller: 'loginController',
             controllerAs: 'vm'
         })
         .when('/logout', {
