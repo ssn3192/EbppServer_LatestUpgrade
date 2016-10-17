@@ -204,6 +204,7 @@
     <Content Include="App\services\paymentDetailFactory.js" />
     <Content Include="App\services\paymentFactory.js" />
     <Content Include="App\services\paymentMethodFactory.js" />
+    <Content Include="App\services\preRegisterFactory.js" />
     <Content Include="App\services\registerFactory.js" />
     <Content Include="App\services\secureNetChargeFactory.js" />
     <Content Include="App\services\secureNetCustomerFactory.js" />

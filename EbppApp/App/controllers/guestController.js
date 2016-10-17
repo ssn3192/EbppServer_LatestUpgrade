@@ -10,7 +10,6 @@
         secureNetTokenFactory,
         secureNetChargeFactory,
         transactionHistoryFactory,
-        achHistoryFactory,
         localStorageService,
         toaster,
         config) {
