@@ -17,7 +17,6 @@ app.controller('invoiceController', function (
     transactionHistoryFactory,
     paymentFactory,
     achFactory,
-    achHistoryFactory,
     bankFactory) {
     var vm = this;
 
