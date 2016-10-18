@@ -42,7 +42,7 @@
     }
     );
 
-    var urlEbppApiDynamic = localDev ? 'http://localhost:59432/api' : 'http://ebpp-restapi.azurewebsites.net/api';
+    var urlEbppApiDynamic = localDev ? 'http://localhost:61319/api' : 'http://ebpp-restapi.azurewebsites.net/api';
     //var urlAchApiDynamic = localDev ? 'http://localhost:62004/api' : 'http://achnachastagerestapi.azurewebsites.net/api';
 
     app.constant('config', {
