@@ -215,6 +215,7 @@
     <Content Include="App\templates\card.html" />
     <Content Include="App\templates\cardOnFile.html" />
     <Content Include="App\templates\customer.html" />
+    <Content Include="App\templates\customerAccount.html" />
     <Content Include="App\templates\customerAchResult.html" />
     <Content Include="App\templates\customerChargeResult.html" />
     <Content Include="App\templates\customerPayment.html" />

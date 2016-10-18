@@ -8,6 +8,11 @@ app.config(function ($routeProvider) {
             controller: 'adminController',
             controllerAs: 'vm'
         })
+         .when('/customerAccount', {
+             templateUrl: 'App/templates/customerAccount.html',
+             controller: 'customeraccountController',
+             controllerAs: 'vm'
+         })
         .when('/bank', {
             templateUrl: 'App/templates/bank.html',
             controller: 'bankController',
