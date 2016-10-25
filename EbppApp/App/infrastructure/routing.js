@@ -145,7 +145,7 @@ app.config(function ($routeProvider) {
             controllerAs: 'vm'
         })
         .when('/payment', {
-            templateUrl: 'App/partials/payment.html',
+            templateUrl: 'App/templates/payment.html',
             controller: 'paymentController',
             controllerAs: 'vm'
         })

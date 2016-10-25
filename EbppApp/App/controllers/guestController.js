@@ -10,6 +10,7 @@
         secureNetTokenFactory,
         secureNetChargeFactory,
         transactionHistoryFactory,
+        achHistoryFactory,
         localStorageService,
         toaster,
         config) {
@@ -57,6 +58,299 @@
         vm.options = {};
 
         common.configErrorHandling($scope, vm, ['email', 'routingNumber', 'dfiAccountNumber']);
+
+        //vm.fields = [
+        //    {
+        //        className: 'section-label',
+
+        //        template: '<div><strong>Name:</strong></div><hr/>'
+
+        //    }, {
+        //        className: 'row',
+        //        fieldGroup: [
+        //            {
+        //                className: 'col-md-3',
+        //                key: 'firstName',
+        //                type: 'input',
+        //                templateOptions: {
+        //                    type: 'text',
+        //                    label: 'First Name *',
+        //                    placeholder: 'Enter your First Name',
+        //                    onBlur: common.coerceInitialValidation('firstName')
+        //                },
+        //                validators: {
+        //                    firstName: function () {
+        //                        return common.validate('requiredValue', arguments, vm, 'First Name is required');
+        //                    }
+        //                }
+        //            }, {
+        //                className: 'col-md-3',
+        //                key: 'lastName',
+        //                type: 'input',
+        //                templateOptions: {
+        //                    type: 'text',
+        //                    label: 'Last *',
+        //                    placeholder: 'Enter your last name',
+        //                    onBlur: common.coerceInitialValidation('lastName')
+        //                },
+        //                validators: {
+        //                    lastName: function () {
+        //                        return common.validate('requiredValue', arguments, vm, 'Last Name is required');
+        //                    }
+        //                }
+        //            }
+        //        ]
+        //    }, {
+        //        className: 'section-label',
+        //        template: '<div><strong>Contact Information:</strong></div><hr/>'
+        //    },
+        //    {
+        //        className: 'row',
+        //        fieldGroup: [
+        //            {
+        //                key: 'email',
+        //                type: 'input',
+        //                templateOptions: {
+        //                    label: 'Email *',
+        //                    type: 'text',
+        //                    placeholder: 'Enter email',
+        //                    onBlur: common.coerceInitialValidation('email')
+        //                },
+        //                validators: {
+        //                    email: function () {
+        //                        return common.validate('matchingValue', arguments, vm, 'Email is not valid', common.EMAIL_PATTERN);
+        //                    }
+        //                }
+        //            }, {
+        //                key: 'phoneNumber',
+        //                type: 'input',
+        //                templateOptions: {
+        //                    label: 'Phone',
+        //                    placeholder: 'Enter phone'
+        //                },
+        //                validators: {
+        //                    phoneNumber: function () {
+        //                        return common.validate('optionalMatch', arguments, vm, 'Phone number is not valid', common.isPhoneNumber);
+        //                    }
+        //                }
+        //            }
+        //        ]
+
+        //    },
+        //    {
+        //        className: 'section-label',
+        //        template: '<div><strong>Invoice:</strong></div><hr/>'
+        //    },
+        //    {
+        //        className: 'row',
+        //        fieldGroup: [
+        //            {
+        //                key: 'payThisAmount',
+        //                type: 'currency',
+        //                templateOptions: {
+        //                    label: 'Amount',
+        //                    placeholder: 'Enter amount',
+        //                    onBlur: common.coerceInitialValidation('payThisAmount')
+        //                },
+        //                validators: {
+        //                    payThisAmount: function () {
+        //                        return common.validate('requiredValue', arguments, vm, 'Amount is required');
+        //                    }
+        //                }
+        //            },
+        //            {
+        //                key: 'accountNumber',
+        //                type: 'readonly',
+        //                templateOptions: {
+        //                    label: 'Account #',
+        //                    placeholder: 'Enter account number'
+        //                }
+        //            },
+        //            {
+        //                key: 'invoiceNumber',
+        //                type: 'input',
+        //                templateOptions: {
+        //                    label: 'Invoice #',
+        //                    placeholder: 'Enter invoice number (optional)'
+        //                }
+        //            }
+        //        ]
+        //    }, {
+        //        className: 'row',
+        //        fieldGroup: [
+        //            {
+        //                className: 'col-md-3',
+        //                key: 'cardOrAch',
+        //                type: 'radio',
+        //                templateOptions: {
+        //                    label: 'Payment Method',
+        //                    required: true,
+        //                    options: [
+        //                        { name: 'Card', value: 'card' },
+        //                        { name: 'ACH', value: 'ach' }
+        //                    ],
+        //                    onClick: function () { vm.model.cardOrAch === 'card' ? resetHiddenFields().ach() : resetHiddenFields().card() }
+        //                }
+        //            }
+        //        ]
+        //    },
+        //    {
+        //        className: 'section-label',
+
+        //        template: '<div><strong>Card:</strong></div><hr/>',
+        //        hideExpression: 'model.cardOrAch !== "card"'
+
+        //    },
+        //    {
+        //        className: 'row',
+
+        //        fieldGroup: [
+        //            {
+        //                className: 'col-md-3',
+        //                key: 'ccType',
+        //                type: 'select',
+        //                templateOptions: {
+        //                    label: 'Type *',
+        //                    options: [
+        //                        { name: 'Visa', value: '01' },
+        //                        { name: 'American Express', value: '02' },
+        //                        { name: 'MasterCard', value: '03' }
+        //                    ],
+        //                    onBlur: common.coerceInitialValidation('ccType')
+        //                },
+        //                validators: {
+        //                    ccType: function () {
+        //                        return common.validate('matchingValue', arguments, vm, 'Please select a Credit Card Type', /^01|02|03$/);
+        //                    }
+        //                }
+        //            }, {
+        //                className: 'col-md-4',
+        //                key: 'ccNumber',
+        //                type: 'creditCard',
+        //                templateOptions: {
+        //                    label: 'Number',
+        //                    required: true //,
+        //                    //placeholder: 'Enter a valid card number'
+        //                },
+        //                expressionProperties: {
+        //                    // The following does not work at all on our page, and is broken at: http://angular-formly.com/#/example/integrations/angular-credit-card
+        //                    // Have opened an issue at: https://github.com/formly-js/angular-formly/issues/684
+        //                    //'templateOptions.placeholder': "\"Enter a valid \" + to.ccType + \" card number\""
+        //                    'templateOptions.ccType': 'formState.ccType'
+        //                }
+        //            },
+        //            {
+        //                className: 'col-md-3',
+        //                key: 'cvv',
+        //                type: 'input',
+        //                templateOptions: {
+        //                    type: 'text',
+        //                    label: 'Cvv *',
+        //                    placeholder: 'Enter cvv for card',
+        //                    onBlur: common.coerceInitialValidation('cvv')
+        //                },
+        //                validators: {
+        //                    cvv: function () {
+        //                        return common.validate('matchingValue', arguments, vm, 'Please enter a valid Cvv Number', /^\d{3,4}$/);
+        //                    }
+        //                }
+        //            }, {
+        //                className: 'col-md-3',
+        //                key: 'expirationMonth',
+        //                type: 'select',
+        //                templateOptions: {
+        //                    label: 'Month *',
+        //                    options: cardFactory.expiryMonthOptions(),
+        //                    onBlur: common.coerceInitialValidation('expirationMonth')
+        //                },
+        //                validators: {
+        //                    expirationMonth: function () {                          // See http://stackoverflow.com/a/2137959/34806 for regex
+        //                        return common.validate('matchingValue', arguments, vm, 'Please select an Expiration Month', /^(0?[1-9]|1[012])$/);
+        //                    }
+        //                }
+        //            },
+        //            {
+        //                className: 'col-md-3',
+        //                key: 'expirationYear',
+        //                type: 'select',
+        //                templateOptions: {
+        //                    label: 'Year *',
+        //                    options: cardFactory.expiryYearOptions(),
+        //                    onBlur: common.coerceInitialValidation('expirationYear')
+        //                },
+        //                validators: {
+        //                    expirationYear: function () {
+        //                        return common.validate('matchingValue', arguments, vm, 'Please select an Expiration Year', /^20[1-9]\d$/);
+        //                    }
+        //                }
+        //            }
+        //        ],
+        //        hideExpression: 'model.cardOrAch !== "card"'
+        //    }, {
+        //        className: 'section-label',
+
+        //        template: '<div><strong>ACH:</strong></div><hr/>',
+        //        hideExpression: 'model.cardOrAch !== "ach"'
+
+        //    }, {
+        //        className: 'row',
+        //        fieldGroup: [
+        //            {
+        //                className: 'col-md-3',
+        //                key: 'routingNumber',
+        //                type: 'input',
+        //                templateOptions:
+        //                {
+        //                    label: 'Routing # *',
+        //                    onBlur: common.coerceInitialValidation('routingNumber')
+        //                },
+        //                validators: {
+        //                    routingNumber: function () {
+        //                        return common.validate('matchingValue', arguments, vm, 'Routing Number must be nine digits', /^\d{9}$/);
+        //                    }
+        //                }
+        //            },
+        //            {
+        //                className: 'col-md-3',
+        //                key: 'dfiAccountNumber',
+        //                type: 'input',
+        //                templateOptions:
+        //                {
+        //                    required: true,
+        //                    label: 'Account #',
+        //                    onBlur: common.coerceInitialValidation('dfiAccountNumber')
+        //                },
+        //                validators: {
+        //                    dfiAccountNumber: function () {                             // http://stackoverflow.com/a/1540314/34806
+        //                        return common.validate('matchingValue', arguments, vm, 'Account Number must be between four and seventeen digits', /^\d{4,17}$/);
+        //                    }
+        //                }
+        //            },
+        //            {
+        //                className: 'col-md-3',
+        //                key: 'accountType',
+        //                type: 'select',
+        //                templateOptions:
+        //                {
+        //                    required: true,
+        //                    label: 'Account Type',
+        //                    options: [
+        //                        { name: 'Checking', value: 1 },
+        //                        { name: 'Savings', value: 2 }
+        //                    ],
+        //                    onBlur: common.coerceInitialValidation('accountType')
+        //                },
+        //                validators: {
+        //                    accountType: function () {
+        //                        return common.validate('matchingValue', arguments, vm, 'Please select Account Type of either Checking or Savings', /^1|2$/);
+        //                    }
+        //                }
+        //            }
+        //        ],
+        //        hideExpression: 'model.cardOrAch !== "ach"'
+        //    }
+        //];
+
 
         //FUNCTIONS 
         //TODO: Move some into factory?

@@ -145,6 +145,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="App\controllers\achHistroyController.js" />
     <Content Include="App\controllers\bankOnFileController.js" />
     <Content Include="App\controllers\bankVaultController.js" />
     <Content Include="App\controllers\cardController.js" />
@@ -185,6 +186,7 @@
     <Content Include="App\infrastructure\runner.js" />
     <Content Include="App\providers\localStorageProvider.js" />
     <Content Include="App\services\achFactory.js" />
+    <Content Include="App\services\achHistoryFactory.js" />
     <Content Include="App\services\authService.js" />
     <Content Include="App\services\bankOnFileFactory.js" />
     <Content Include="App\services\bankVaultFactory.js" />
@@ -216,6 +218,7 @@
     <Content Include="App\templates\cardOnFile.html" />
     <Content Include="App\templates\customer.html" />
     <Content Include="App\templates\customerAccount.html" />
+    <Content Include="App\templates\customerAccountItem.html" />
     <Content Include="App\templates\customerAchResult.html" />
     <Content Include="App\templates\customerChargeResult.html" />
     <Content Include="App\templates\customerPayment.html" />
