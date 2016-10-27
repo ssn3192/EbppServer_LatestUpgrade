@@ -5,17 +5,17 @@ app.factory('preRegisterFactory', function ($http, $q, usSpinnerService, config)
 
     var url = config.urlEbppApi;
 
-    service.getCustomerFromMerchant = function (merchantId, accountNumber, lastAmountPaid) {
-        var urlGet = url + '/CustomerFromMerchant/MerchantId/' + merchantId + '/AccountNumber/' + accountNumber + '/LastAmountPaid/' + lastAmountPaid + '/';
+    service.getCustomerAccount = function (merchantId, accountNumber, lastAmountPaid) {
+        var urlGet = url + '/CustomerAccount/MerchantId/' + merchantId + '/AccountNumber/' + accountNumber + '/LastAmountPaid/' + lastAmountPaid + '/';
         var deferred = $q.defer();
         $http.get(urlGet).then(
-            function (getCustomerFromMerchantResponse) {
+            function (getCustomerAccountResponse) {
                 //success
-                return deferred.resolve(getCustomerFromMerchantResponse);
+                return deferred.resolve(getCustomerAccountResponse);
             },
-            function (getCustomerFromMerchantResponse) {
+            function (getCustomerAccountResponse) {
                 //failure
-                return deferred.reject(getCustomerFromMerchantResponse);
+                return deferred.reject(getCustomerAccountResponse);
             });
         return deferred.promise;
     }

@@ -13,7 +13,7 @@ app.controller('preRegisterController', function (
     var vm = this;
 
     loginFactory.logout();
-    localStorageService.set('merchantId', 1);
+    localStorageService.set('id', 1);
     vm.merchantId = 1;
 
     vm.preRegister = preRegister;
@@ -55,11 +55,11 @@ app.controller('preRegisterController', function (
 
     function preRegister() {
         //  alert("called");
-        preRegisterFactory.getCustomerFromMerchant(vm.merchantId, vm.model.accountNumber, vm.model.lastAmountPaid).then(
-            function (getCustomerFromMerchantResponse) {
+        preRegisterFactory.getCustomerAccount(vm.merchantId, vm.model.accountNumber, vm.model.lastAmountPaid).then(
+            function (getCustomerAccountResponse) {
                 //success
 
-                var data = getCustomerFromMerchantResponse;
+                var data = getCustomerAccountResponse;
 
 
                 if (data.CustomerId > 0) {
@@ -76,14 +76,14 @@ app.controller('preRegisterController', function (
                     return;
                 }
 
-                localStorageService.set('customerFromMerchant', data);
+                localStorageService.set('customerAccount', data);
                 //  alert("called");
                 $location.path('register');
 
             },
-            function (getCustomerFromMerchantResponse) {
+            function (getCustomerAccountResponse) {
                 //failure
-                var f = getCustomerFromMerchantResponse.data;
+                var f = getCustomerAccountResponse.data;
                 //alert(getCustomerFromMerchantResponse.data);
             });
     }
