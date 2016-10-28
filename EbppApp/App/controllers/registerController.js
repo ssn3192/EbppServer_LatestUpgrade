@@ -25,16 +25,17 @@ app.controller('registerController', function (
 
     vm.register = register;
 
-    var customer = localStorageService.get('customerAccount').data;
+    var customer = localStorageService.get('customerAccount');
+    vm.customer = customer;
 
     vm.model = {
         accountNumber: customer.accountNumber,
-        firstName: customer.firstName,
-        lastName: customer.lastName,
+      firstName: customer.FirstName,
+        lastName: customer.LastName,
         sendEmailReceipts: false
     };
 
-
+    var a = 0;
 
     //FUNCTIONS--
     function register() {

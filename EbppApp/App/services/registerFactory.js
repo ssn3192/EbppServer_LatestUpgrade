@@ -5,22 +5,22 @@ app.factory('registerFactory', function (config, $http, $q, usSpinnerService, co
     var url = config.urlEbppApi;
 
 
-    var _merchantCustomerXferId = '';
+    var _customermerchantXrefId = '';
 
-    service.setMerchantCustomerXferId = function (merchantCustomerXferId) {
-        _merchantCustomerXferId = merchantCustomerXferId;
+    service.setCustomerMerchantXrefId = function (customermerchantXrefId) {
+        _customermerchantXrefId = customermerchantXrefId;
     };
 
-    service.getMerchantCustomerXferId = function () {
-        return _merchantCustomerXferId;
+    service.getCustomerMerchantXrefId = function () {
+        return _customermerchantXrefId;
     };
 
-    service.getMerchantCustomerXfer = function () {
-        var ebppMerchantCustomerXferGetUrl = url + '/MerchantCustomerXref/Id' + _merchantCustomerXferId + '/';
+    service.getCustomerMerchantXrefId = function () {
+        var ebppCustomerMerchantXrefGetUrl = url + '/CustomerMerchantXref/Id' + _customermerchantXrefId + '/';
         var deferred = $q.defer();
         usSpinnerService.spin('spinner-1');
 
-        $http.get(ebppMerchantCustomerXferGetUrl).then(function (response) {
+        $http.get(ebppCustomerMerchantXrefGetUrl).then(function (response) {
             //success
             usSpinnerService.stop('spinner-1');
             deferred.resolve(response);
@@ -33,12 +33,12 @@ app.factory('registerFactory', function (config, $http, $q, usSpinnerService, co
         return deferred.promise;
     };
 
-    service.createMerchantCustomerXref = function (merchantCustomerXref) {
-        var ebppMerchantCustomerXferPostUrl = url + '/MerchantCustomerXref/Create/{merchantCustomerXref}/';
+    service.createCustomerMerchantXref = function (customerMerchantXref) {
+        var ebppCustomerMerchantXrefPostUrl = url + '/CustomerMerchantXref/Create/{CustomerMerchantXref}/';
         var deferred = $q.defer();
         usSpinnerService.spin('spinner-1');
 
-        $http.post(ebppMerchantCustomerXferPostUrl, merchantCustomerXref).then(function (response) {
+        $http.post(ebppCustomerMerchantXrefPostUrl, customerMerchantXref).then(function (response) {
             //success
             usSpinnerService.stop('spinner-1');
             deferred.resolve(response);
@@ -51,27 +51,27 @@ app.factory('registerFactory', function (config, $http, $q, usSpinnerService, co
         return deferred.promise;
     };
 
-    service.updateCustomerFromMerchant = function (customerFromMerchant) {
-        var urlPut = url + '/CustomerFromMerchant/Update/{customerFromMerchant}';
+    service.updatecustomer = function (customer) {
+        var urlPut = url + '/Customer/Update/{customer}';
         var deferred = $q.defer();
         usSpinnerService.spin('spinner-1');
 
-        $http.put(urlPut, customerFromMerchant).then(
-            function (updateCustomerFromMerchantResponse) {
+        $http.put(urlPut, customer).then(
+            function (updatecustomerResponse) {
                 //success
                 usSpinnerService.stop('spinner-1');
-                deferred.resolve(updateCustomerFromMerchantResponse);
+                deferred.resolve(updatecustomerResponse);
             },
-            function (updateCustomerFromMerchantResponse) {
+            function (updatecustomerResponse) {
                 //failure
                 usSpinnerService.stop('spinner-1');
-                deferred.reject(updateCustomerFromMerchantResponse);
+                deferred.reject(updatecustomerResponse);
             });
         return deferred.promise;
     };
 
     service.registerNewUser = function (addUserRequest) {
-        var urlPost = url + '/User/Create/{addUserRequest}/';
+        var urlPost = url + '/UserInformation/Create/{addUserRequest}/';
         var deferred = $q.defer();
         usSpinnerService.spin('spinner-1');
         $http.post(urlPost, addUserRequest).then(

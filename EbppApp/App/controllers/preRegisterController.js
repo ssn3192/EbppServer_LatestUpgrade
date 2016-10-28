@@ -59,7 +59,7 @@ app.controller('preRegisterController', function (
             function (getCustomerAccountResponse) {
                 //success
 
-                var data = getCustomerAccountResponse;
+                var data = getCustomerAccountResponse.data;
 
 
                 if (data.CustomerId > 0) {

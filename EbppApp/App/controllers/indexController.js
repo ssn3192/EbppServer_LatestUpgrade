@@ -5,11 +5,13 @@ app.controller('indexController', function (
     $routeParams,
     $location,
     merchantFactory,
+    loginFactory,
     indexFactory) {
 
     var vm = this;
     vm.isLoggedIn = false;
     vm.merchantId = 1;
+    loginFactory.logout();
     //atlanta: 6EADE888-BC44-4109-85A6-979D0E0E3248 KUS9P5N5E624
     //groupEz: d9746a70-810f-4d5c-bb6c-3cce5c60c245 PS47NUJK34Y6
 
