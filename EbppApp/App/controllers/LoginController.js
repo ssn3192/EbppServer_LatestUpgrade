@@ -15,6 +15,9 @@ app.controller('loginController', function (
     config) {
     var vm = this;
 
+
+
+    loginFactory.logout();
     var controllerId = 'login';
     var getLogFn = common.logger.getLogFn;
     var log = getLogFn(controllerId);

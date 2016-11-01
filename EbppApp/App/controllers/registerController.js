@@ -35,7 +35,7 @@ app.controller('registerController', function (
         sendEmailReceipts: false
     };
 
-    var a = 0;
+  //  var a = 0;
 
     //FUNCTIONS--
     function register() {
@@ -74,21 +74,21 @@ app.controller('registerController', function (
                 var data = registerNewUserResponse.data;
                 vm.userId = data;
 
-                var customerModel = {
+                var customer = {
                     FirstName: vm.model.firstName,
                     LastName: vm.model.lastName,
                     PhoneNumber: vm.model.phoneNumber,
-                    UserId: vm.userId,
+                    UserInformationId: vm.userId,
                     EmailAddress: vm.model.email,
                     CustomerDuplicateCheckIndicator: 0,
                     SendEmailReceipts: model.sendEmailReceipts
                 }
 
-                customerFactory.createCustomer(customerModel).then(
+                customerFactory.createCustomer(customer).then(
                     function (createCustomerResponse) {
                         //success
                         vm.customerId = createCustomerResponse.data;
-                        customerFromMerchant.customerId = vm.customerId;
+                        customerAccount.customerId = vm.customerId;
 
                         var merchantCustomerModel = {
                             merchantId: vm.merchantId,
@@ -100,17 +100,17 @@ app.controller('registerController', function (
                            function (createMerchantCustomerXrefResponse) {
                                //success
 
-                               registerFactory.updateCustomerFromMerchant(customerFromMerchant).then(
-                                        function (updateCustomerFromMerchantResponse) {
+                               registerFactory.updatecustomerAccount(customerAccount).then(
+                                        function (updatecustomerAccountResponse) {
                                             //success
                                             $location.path('login');
                                         },
-                                   function (updateCustomerFromMerchantResponse) {
+                                   function (updatecustomerAccountResponse) {
                                        //failure
                                        toaster.pop({
                                            type: 'error',
-                                           title: 'updateCustomerFromMerchant',
-                                           body: updateCustomerFromMerchantResponse.data,
+                                           title: 'updatecustomerAccount',
+                                           body: updatecustomerAccountResponse.data,
                                            showCloseButton: true
                                        });
                                    });
