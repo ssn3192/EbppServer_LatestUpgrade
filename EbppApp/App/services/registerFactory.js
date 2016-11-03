@@ -71,7 +71,7 @@ app.factory('registerFactory', function (config, $http, $q, usSpinnerService, co
     };
 
     service.registerNewUser = function (addUserRequest) {
-        var urlPost = url + '/UserInformation/Create/{addUserRequest}/';
+        var urlPost = url + '/Customer/Create/{addUserRequest}/';
         var deferred = $q.defer();
         usSpinnerService.spin('spinner-1');
         $http.post(urlPost, addUserRequest).then(

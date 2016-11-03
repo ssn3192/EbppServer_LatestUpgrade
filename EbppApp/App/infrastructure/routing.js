@@ -13,6 +13,11 @@ app.config(function ($routeProvider) {
              controller: 'customeraccountController',
              controllerAs: 'vm'
          })
+          .when('/customerAccountItem', {
+              templateUrl: 'App/templates/customerAccountItem.html',
+              controller: 'customeraccountitemController',
+              controllerAs: 'vm'
+          })
         .when('/bank', {
             templateUrl: 'App/templates/bank.html',
             controller: 'bankController',

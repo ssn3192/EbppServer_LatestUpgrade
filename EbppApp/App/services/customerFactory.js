@@ -68,31 +68,31 @@ app.factory('customerFactory', function ($http, $q, $location, config, usSpinner
         return deferred.promise;
     }
 
-    service.getCustomerByUserId = function (userId) {
+    service.getCustomerByUserInformationId = function (userId) {
         var ebppCustomerGetUrl = url + '/Customer/Id/' + userId;
         var deferred = $q.defer();
         usSpinnerService.spin('spinner-1');
 
         $http.get(ebppCustomerGetUrl).then(
-            function (getCustomerByUserIdResponse) {
+            function (getCustomerByUserInformationIdResponse) {
                 //success
                 usSpinnerService.stop('spinner-1');
-                deferred.resolve(getCustomerByUserIdResponse);
+                deferred.resolve(getCustomerByUserInformationIdResponse);
             },
             function (getCustomerByUserIdResponse) {
                 //failure
                 usSpinnerService.stop('spinner-1');
-                deferred.reject(getCustomerByUserIdResponse);
+                deferred.reject(getCustomerByUserInformationIdResponse);
             });
 
         return deferred.promise;
     }
 
 
-    //service.getCustomerByAlias = function (alias) {
-    //    var ebppCustomerGetUrl = url + '/Customer/Alias/' + alias;
-    //    var deferred = $q.defer();
-    //    usSpinnerService.spin('spinner-1');
+    service.getCustomerByAlias = function (alias) {
+        var ebppCustomerGetUrl = url + '/Customer/Alias/' + alias;
+        var deferred = $q.defer();
+        usSpinnerService.spin('spinner-1');
 
     //    $http.get(ebppCustomerGetUrl).then(
     //        function (getCustomerByAliasResponse) {
@@ -106,8 +106,8 @@ app.factory('customerFactory', function ($http, $q, $location, config, usSpinner
     //            deferred.reject(getCustomerByAliasResponse);
     //        });
 
-    //    return deferred.promise;
-    //}
+     return deferred.promise;
+    }
 
 
     service.setLocalStorageCustomer = function (customer) {

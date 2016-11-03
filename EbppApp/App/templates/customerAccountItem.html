@@ -2,9 +2,45 @@
 <html>
 <head>
     <title></title>
-	<meta charset="utf-8" />
+    <meta charset="utf-8" />
 </head>
 <body>
+    <div class="container">
+        <strong> CUSTOMER ACCOUNT ITEMS</strong>
+        <form class="form-horizontal">
+            <!--<div class="form-group">
+                <label class="control-label col-sm-2" for="name">Customer Name *</label>
+                <div class="col-xs-3">
+                    <input type="text" class="form-control" id="name" required placeholder="Enter name">
+                </div>
+            </div>-->
 
+            <div class="form-group">
+                <label class="control-label col-sm-2" for="itemnumber">Item Number *</label>
+                <div class="col-xs-3">
+                    <input type="text" class="form-control" id="itemnumber" required ng-model="vm.model.itemNumber">
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label class="control-label col-sm-2" for="itemamt">Item Amount*</label>
+                <div class="col-xs-3">
+                    <input type="text" class="form-control" id="itemamt" required ng-model="vm.model.itemAmount">
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label class="control-label col-sm-2" for="itemdescription">Item Description:</label>
+                <div class="col-xs-3">
+                    <textarea class="form-control" rows="5" id="itemdescription" ng-model="vm.model.itemDescription"></textarea>
+
+                </div>
+            </div>
+
+            <button type="submit" name="btncustomeraccount" class="btn btn-primary submit-button" ng-click="vm.save()">Save</button>
+        </form>
+
+
+    </div>
 </body>
 </html>

@@ -72,13 +72,13 @@ app.controller('registerController', function (
             function (registerNewUserResponse) {
                 //success
                 var data = registerNewUserResponse.data;
-                vm.userId = data;
+              vm.userId = data;
 
                 var customer = {
                     FirstName: vm.model.firstName,
                     LastName: vm.model.lastName,
                     PhoneNumber: vm.model.phoneNumber,
-                    UserInformationId: vm.userId,
+                 //   alias: vm.alias,
                     EmailAddress: vm.model.email,
                     CustomerDuplicateCheckIndicator: 0,
                     SendEmailReceipts: model.sendEmailReceipts

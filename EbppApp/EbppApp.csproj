@@ -150,6 +150,8 @@
     <Content Include="App\controllers\bankVaultController.js" />
     <Content Include="App\controllers\cardController.js" />
     <Content Include="App\controllers\cardOnFileController.js" />
+    <Content Include="App\controllers\customerAccountController.js" />
+    <Content Include="App\controllers\customerAccountItemController.js" />
     <Content Include="App\controllers\customerAchResultController.js" />
     <Content Include="App\controllers\customerChargeResultController.js" />
     <Content Include="App\controllers\customerController.js" />
@@ -195,6 +197,8 @@
     <Content Include="App\services\comman\comman.js" />
     <Content Include="App\services\comman\exceptionHandlerFactory.js" />
     <Content Include="App\services\comman\logger.js" />
+    <Content Include="App\services\customerAccountFactory.js" />
+    <Content Include="App\services\customerAccountItemService.js" />
     <Content Include="App\services\customerFactory.js" />
     <Content Include="App\services\globalFactory.js" />
     <Content Include="App\services\guestFactory.js" />
