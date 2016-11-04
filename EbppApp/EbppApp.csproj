@@ -198,7 +198,7 @@
     <Content Include="App\services\comman\exceptionHandlerFactory.js" />
     <Content Include="App\services\comman\logger.js" />
     <Content Include="App\services\customerAccountFactory.js" />
-    <Content Include="App\services\customerAccountItemService.js" />
+    <Content Include="App\services\customerAccountItemFactory.js" />
     <Content Include="App\services\customerFactory.js" />
     <Content Include="App\services\globalFactory.js" />
     <Content Include="App\services\guestFactory.js" />
