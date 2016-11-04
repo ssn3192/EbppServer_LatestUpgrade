@@ -90,13 +90,13 @@ app.controller('registerController', function (
                         vm.customerId = createCustomerResponse.data;
                         customerAccount.customerId = vm.customerId;
 
-                        var merchantCustomerModel = {
+                        var accountModel= {
                             merchantId: vm.merchantId,
                             customerId: createCustomerResponse.data.customerId,
                             accountNumber: vm.model.accountNumber
                         }
 
-                        registerFactory.createMerchantCustomerXref(merchantCustomerModel).then(
+                        registerFactory.createMerchantCustomerXref(accountModel).then(
                            function (createMerchantCustomerXrefResponse) {
                                //success
 

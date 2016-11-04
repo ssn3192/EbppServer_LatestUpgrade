@@ -6,7 +6,7 @@ app.factory('loginFactory', function ($http, $q, $location, config, usSpinnerSer
 
     service.login = function (cred) {
         var deferred = $q.defer();
-        var urlPost = url + '/UserInformation/';
+        var urlPost = url + '/Customer/';
 
         usSpinnerService.spin('spinner-1');
 
